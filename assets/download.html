@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en-US" id="arve" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Widgets: Fundamental UI Elements for Unity</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="http://blog.leapmotion.com/xmlrpc.php" />
+
+	<!--[if IE]>
+		<link rel="stylesheet" type="text/css" href="http://blog.leapmotion.com/wp-content/themes/author/includes/styles/ie.css" media="screen"/>
+	<![endif]-->
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/wp-content/themes/author/style-custom.css">
+  <link rel="stylesheet" href="/wp-content/fonts/awesome/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.5.0/balloon.min.css">
+  <link rel="stylesheet" href="/wp-content/themes/author/header/css/universal-header-skin.css">
+
+  <link rel='stylesheet' href='/wp-content/themes/author/style.css'>
+<!-- This site is optimized with the Yoast SEO plugin v9.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="User interface design can be a huge challenge, especially with the possibilities of 3D interfaces. Today, we’re excited to release three UI widgets."/>
+<link rel="canonical" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Widgets: Fundamental UI Elements for Unity" />
+<meta property="og:description" content="User interface design can be a huge challenge, especially with the possibilities of 3D interfaces. Today, we’re excited to release three UI widgets." />
+<meta property="og:url" content="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/" />
+<meta property="og:site_name" content="Leap Motion Blog" />
+<meta property="article:tag" content="widgets" />
+<meta property="article:section" content="Art &amp; Design" />
+<meta property="article:published_time" content="2014-11-08T15:30:20+00:00" />
+<meta property="article:modified_time" content="2015-04-24T13:13:41+00:00" />
+<meta property="og:updated_time" content="2015-04-24T13:13:41+00:00" />
+<meta property="og:image" content="http://blog.leapmotion.com/wp-content/uploads/2014/11/blog-widgets.gif" />
+<meta property="og:image:width" content="864" />
+<meta property="og:image:height" content="330" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Leap Motion Blog &raquo; Feed" href="http://blog.leapmotion.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Leap Motion Blog &raquo; Comments Feed" href="http://blog.leapmotion.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Leap Motion Blog &raquo; Introducing Widgets: Fundamental UI Elements for Unity Comments Feed" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/blog.leapmotion.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.4"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='mailchimpSF_main_css-css'  href='http://blog.leapmotion.com/?mcsf_action=main_css&#038;ver=5.2.4' type='text/css' media='all' />
+<!--[if IE]>
+<link rel='stylesheet' id='mailchimpSF_ie_css-css'  href='http://blog.leapmotion.com/wp-content/plugins/mailchimp/css/ie.css?ver=5.2.4' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='selection-sharer-css'  href='http://blog.leapmotion.com/wp-content/plugins/selection-sharer/css/selection-sharer.css?ver=0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='http://blog.leapmotion.com/wp-includes/css/dist/block-library/style.min.css?ver=5.2.4' type='text/css' media='all' />
+<link rel='stylesheet' id='bcct_style-css'  href='http://blog.leapmotion.com/wp-content/plugins/better-click-to-tweet/assets/css/styles.css?ver=3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='http://blog.leapmotion.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.0.5' type='text/css' media='all' />
+<link rel='stylesheet' id='cab_style-css'  href='http://blog.leapmotion.com/wp-content/plugins/custom-about-author/cab-style.css?ver=5.2.4' type='text/css' media='all' />
+<link rel='stylesheet' id='images-comparison-style-css'  href='http://blog.leapmotion.com/wp-content/plugins/images-comparison/assets/front/css/front.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wpfront-notification-bar-css'  href='http://blog.leapmotion.com/wp-content/plugins/wpfront-notification-bar/css/wpfront-notification-bar.css?ver=1.7.1' type='text/css' media='all' />
+<link rel='stylesheet' id='fancybox-0-css'  href='http://blog.leapmotion.com/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/lightbox/static/fancybox/jquery.fancybox-1.3.4.min.css?ver=3.0.16' type='text/css' media='all' />
+<link rel='stylesheet' id='author-author-style-css'  href='http://blog.leapmotion.com/wp-content/themes/author/style.css?ver=5.2.4' type='text/css' media='all' />
+<link rel='stylesheet' id='media-queries-css-css'  href='http://blog.leapmotion.com/wp-content/themes/author/media-queries.css?ver=0.1' type='text/css' media='screen' />
+<link rel='stylesheet' id='developer-portal-styles-css'  href='http://blog.leapmotion.com/wp-content/themes/author/standalone-header.css?ver=0.1' type='text/css' media='screen' />
+<link rel='stylesheet' id='author-fontawesome-css-css'  href='http://blog.leapmotion.com/wp-content/themes/author/includes/fonts/fontawesome/font-awesome.css?ver=0.1' type='text/css' media='screen' />
+<link rel='stylesheet' id='author-flexslider-css-css'  href='http://blog.leapmotion.com/wp-content/themes/author/includes/js/flexslider/flexslider.css?ver=0.1' type='text/css' media='screen' />
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/plugins/mailchimp//js/scrollTo.js?ver=1.5.7'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-includes/js/jquery/jquery.form.min.js?ver=4.2.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var mailchimpSF = {"ajax_url":"http:\/\/blog.leapmotion.com\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/plugins/mailchimp//js/mailchimp.js?ver=1.5.7'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/plugins/wp-hide-post/public/js/wp-hide-post-public.js?ver=2.0.10'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/plugins/wpfront-notification-bar/jquery-plugins/jquery.c.js?ver=1.4.0'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/plugins/wpfront-notification-bar/js/wpfront-notification-bar.js?ver=1.7.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var photocrati_ajax = {"url":"http:\/\/blog.leapmotion.com\/?photocrati_ajax=1","wp_home_url":"http:\/\/blog.leapmotion.com","wp_site_url":"http:\/\/blog.leapmotion.com","wp_root_url":"http:\/\/blog.leapmotion.com","wp_plugins_url":"http:\/\/blog.leapmotion.com\/wp-content\/plugins","wp_content_url":"http:\/\/blog.leapmotion.com\/wp-content","wp_includes_url":"http:\/\/blog.leapmotion.com\/wp-includes\/","ngg_param_slug":"nggallery"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/ajax/static/ajax.min.js?ver=3.0.16'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/plugins/google-analyticator/external-tracking.min.js?ver=6.5.4'></script>
+<link rel='https://api.w.org/' href='http://blog.leapmotion.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.leapmotion.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.leapmotion.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='http://blog.leapmotion.com/?p=1916' />
+<link rel="alternate" type="application/json+oembed" href="http://blog.leapmotion.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fblog.leapmotion.com%2Fintroducing-widgets-fundamental-ui-elements-unity%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://blog.leapmotion.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fblog.leapmotion.com%2Fintroducing-widgets-fundamental-ui-elements-unity%2F&#038;format=xml" />
+<!-- <meta name="NextGEN" version="3.0.16" /> -->
+
+		<script>
+		(function(h,o,t,j,a,r){
+			h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+			h._hjSettings={hjid:1449543,hjsv:5};
+			a=o.getElementsByTagName('head')[0];
+			r=o.createElement('script');r.async=1;
+			r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+			a.appendChild(r);
+		})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
+		<style type='text/css'>.rp4wp-related-posts ul{width:100%;padding:0;margin:0;float:left;}
+.rp4wp-related-posts ul>li{list-style:none;padding:0;margin:0;padding-bottom:20px;clear:both;}
+.rp4wp-related-posts ul>li>p{margin:0;padding:0;}
+.rp4wp-related-post-image{width:35%;padding-right:25px;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;float:left;}</style>
+	<style type="text/css">
+		.post-content a {
+			color: #5daa00;
+		}
+
+		.ribbon {
+			border-color: #5daa00 #5daa00 white;
+		}
+		
+			</style>
+    <!-- All in one Favicon 4.7 --><link rel="icon" href="https://blog.leapmotion.com/wp-content/uploads/2014/08/avatar_6612aae3fadd_64.png" type="image/png"/>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+<!-- Google Analytics Tracking by Google Analyticator 6.5.4: http://www.videousermanuals.com/google-analyticator/ -->
+<script type="text/javascript">
+    var analyticsFileTypes = [''];
+    var analyticsSnippet = 'disabled';
+    var analyticsEventTracking = 'enabled';
+</script>
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-31536531-1', 'auto');
+ 
+	ga('send', 'pageview');
+</script>
+  
+
+
+  <!-- New header CSS -->
+  <style>
+   
+  </style>
+
+
+<link rel='stylesheet' id='okaysocial_style-css'  href='http://blog.leapmotion.com/wp-content/plugins/okay-toolkit/includes/css/social-style.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='okaysocial_icon_style-css'  href='http://blog.leapmotion.com/wp-content/plugins/okay-toolkit/includes/css/social-icons.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='okaysocial_icon_font-css'  href='http://blog.leapmotion.com/wp-content/plugins/okay-toolkit/includes/css/fonts/fontello/fontello.css?ver=1.0.0' type='text/css' media='all' />
+</head>
+
+<body class="post-template-default single single-post postid-1916 single-format-standard">
+	
+	<div id="wrapper" class="clearfix">
+		
+<div id="header-wrapper"><header id="header" class="header sqs-announcement-bar-dropzone">
+          <div class="title-nav-wrapper">
+            <div class="lm-logo-wrapper">
+              <a href="https://www.leapmotion.com/" id="top">
+                <img class="lm-logo-image" src="/wp-content/themes/author/header/logo.png">
+              </a>
+            </div>
+            
+            <!--MAIN NAVIGATION-->
+            <div id="desktopNav">
+              
+  <nav class="main-nav">
+      <div class="nav-wrapper">
+        <ul class="cf">
+          
+            <li class="index-collection active-link folder">
+                <a href="https://www.leapmotion.com/technology"><span>Technology</span></a>
+            </li>
+			
+            <li class="external-link">
+              <a href="https://developer.leapmotion.com/"><span>Developers</span></a>
+            </li>      
+              
+            <li class="index-collection folder">
+                <a href="https://blog.leapmotion.com/"><span class='menu-selected'>Blog</span></a>
+            </li>
+   
+            <li class="external-link">
+              <a href="https://gallery.leapmotion.com/"><span>Gallery</span></a>
+            </li>
+       
+            <li class="external-link">
+              <a href="https://store.leapmotion.com/"><span>Store</span></a>
+            </li>
+      </ul>
+	  </div>
+	  </nav>
+
+            </div><div id="mobileNav"><div id="o-wrapper" class="o-wrapper">
+
+  <main class="o-content">
+    <div class="o-container">
+      
+      <div class="c-buttons">
+        <button id="c-button--push-right" class="c-button"></button>
+      </div>
+  </main><!-- /o-content -->
+
+</div><!-- /o-wrapper --></div>
+          </div>
+        </header>
+
+
+
+
+<nav id="c-menu--push-right" class="c-menu c-menu--push-right">
+  <button class="c-menu__close">&times;</button>
+  <ul class="c-menu__items">
+    <li class="c-menu__item"><a href="https://www.leapmotion.com/technology" class="c-menu__link">Technology</a></li>
+    <li class="c-menu__item"><a href="https://developer.leapmotion.com/" class="c-menu__link">Developers</a></li>
+    <li class="c-menu__item"><a href="https://www.leapmotion.com/careers" class="c-menu__link">Careers</a></li>
+    <li class="c-menu__item"><a href="http://blog.leapmotion.com" class="c-menu__link menu-selected">Blog</a></li>
+    <li class="c-menu__item"><a href="https://gallery.leapmotion.com/" class="c-menu__link">Gallery</a></li>
+    <li class="c-menu__item"><a href="https://www.leapmotion.com/about/" class="c-menu__link">About</a></li>
+    <li class="c-menu__item"><a href="https://store.leapmotion.com/" class="c-menu__link">Store</a></li>
+  </ul>
+</nav><!-- /c-menu push-right -->
+
+<div id="c-mask" class="c-mask"></div></div><!-- /c-mask -->
+
+<!-- menus script -->
+<script src="/wp-content/themes/author/header/js/dist/menu.js"></script>
+<script>
+  
+
+  /**
+   * Push right instantiation and action.
+   */
+  var pushRight = new Menu({
+    wrapper: '#o-wrapper',
+    type: 'push-right',
+    menuOpenerClass: '.c-button',
+    maskId: '#c-mask'
+  });
+
+  var pushRightBtn = document.querySelector('#c-button--push-right');
+  
+  pushRightBtn.addEventListener('click', function(e) {
+    e.preventDefault;
+    pushRight.open();
+  });
+
+
+
+</script>
+
+</div>
+
+<div id="hero-background">
+<div class="newsletter-hero">
+
+Get updates on the future of VR/AR:<br><!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<div id="mc_embed_signup">
+<form action="//leapmotion.us6.list-manage.com/subscribe/post?u=b6db0e3e157a48749e1048615&amp;id=f0a6fbd89e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b6db0e3e157a48749e1048615_f0a6fbd89e" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="&#xf1d8;" name="subscribe" id="mc-embedded-subscribe" class="icon-foo"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+
+</div>
+</div>
+<div id="feature-tags"><p>&nbsp;&nbsp;FILTERS:&nbsp;&nbsp; &nbsp;&nbsp;
+<a href="http://blog.leapmotion.com/category/art/">Art&nbsp;&&nbsp;Design</a>&nbsp;&nbsp; &nbsp;&nbsp;
+<a href="http://blog.leapmotion.com/category/education/">Education</a>&nbsp;&nbsp; &nbsp;&nbsp;
+<a href="http://blog.leapmotion.com/tag/explorations/">Explorations</a>&nbsp;&nbsp; &nbsp;&nbsp;
+<a href="http://blog.leapmotion.com/category/gaming/">Gaming</a>&nbsp;&nbsp; &nbsp;&nbsp;
+<a href="http://blog.leapmotion.com/category/hardware/">Hardware</a>&nbsp;&nbsp; &nbsp;&nbsp;
+<a href="http://blog.leapmotion.com/category/medical/">Medical</a>&nbsp;&nbsp; &nbsp;&nbsp;
+<a href="http://blog.leapmotion.com/category/music/">Music</a>&nbsp;&nbsp; &nbsp;&nbsp;
+<a href="http://blog.leapmotion.com/category/orion/">Orion</a>&nbsp;&nbsp; &nbsp;&nbsp;
+<a href="http://blog.leapmotion.com/category/unity/">Unity</a>&nbsp;&nbsp; &nbsp;&nbsp;
+<a href="http://blog.leapmotion.com/category/unreal/">Unreal</a>&nbsp;&nbsp; &nbsp;&nbsp;
+<a href="http://blog.leapmotion.com/category/ux/">UX&nbsp;Design</a>&nbsp;&nbsp; &nbsp;&nbsp;
+<a href="http://blog.leapmotion.com/category/arvr/">VR/AR</a>
+&nbsp;&nbsp;</p></div>
+
+		<div id="content-wrap" class="clearfix">
+
+<div id="search-2" class="widget widget_search"><form method="get" id="searchform" action="https://blog.leapmotion.com/" role="search"> <label for="s" class="assistive-text">Search</label> <input type="text" class="field" name="s" value="" id="s"> <input type="submit" class="submit" name="submit" id="searchsubmit" value="Search"></form></div>
+
+			<!-- excerpt slider -->
+			
+<!-- excerpt scroller -->
+			
+			<div id="content">
+				<!-- post navigation -->
+									
+				<div class="post-wrap">
+					<!-- load the posts -->
+										
+						<div class="post post-1916 type-post status-publish format-standard has-post-thumbnail hentry category-art category-arvr category-foss category-gaming category-hardware category-leapteam category-unity category-ux tag-widgets">
+							<div class="box">
+	
+								
+								<!-- load the video -->
+																
+									<!-- load the featured image -->
+																			<a class="featured-image" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/" title="Introducing Widgets: Fundamental UI Elements for Unity"><img width="864" height="330" src="http://blog.leapmotion.com/wp-content/uploads/2014/11/blog-widgets.gif" class="attachment-large-image size-large-image wp-post-image" alt="" /></a>
+																	
+																
+								<div class="frame">
+									<div class="title-wrap">
+										
+											<div class="title-meta">
+												<span class="userrole">LM</span>&nbsp;&nbsp;										
+												<a href="http://blog.leapmotion.com/author/andrewlittlefield/" title="Posts by Andrew Littlefield" rel="author">Andrew Littlefield</a>												<span class="sep">/</span> 
+												<a href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/">November 8, 2014</a>
+												<span class="sep">/</span>
+												<a href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#disqus_thread" title="Introducing Widgets: Fundamental UI Elements for Unity comments">Leave a Comment</a>
+											</div><!-- title meta -->
+																				<h2 class="entry-title"><a href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/" title="Introducing Widgets: Fundamental UI Elements for Unity">Introducing Widgets: Fundamental UI Elements for Unity</a></h2>
+									<div class="share">
+								
+				<!-- facebook -->
+				<a class="share-facebook" onclick="window.open('http://www.facebook.com/share.php?u=http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/','facebook','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="http://www.facebook.com/share.php?u=http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/" title="Introducing Widgets: Fundamental UI Elements for Unity"  target="blank"><span class="social-icons facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span class="social-icons-text">Share</span></span></a>
+				
+				<!-- twitter -->
+				<a class="share-twitter" onclick="window.open('http://twitter.com/home?status=Introducing Widgets: Fundamental UI Elements for Unity - http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/ &#64;leapmotion','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="http://twitter.com/home?status=Introducing Widgets: Fundamental UI Elements for Unity - http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/" title="Introducing Widgets: Fundamental UI Elements for Unity &#64;leapmotion" target="blank"><span class="social-icons twitter"><i class="fa fa-twitter" aria-hidden="true"></i><span class="social-icons-text">Tweet</span></span>
+</a>
+
+
+				<!-- linkedin -->
+				<a class="share-linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/&title=Introducing Widgets: Fundamental UI Elements for Unity','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="https://www.linkedin.com/shareArticle?mini=true&url=http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/&title=Introducing Widgets: Fundamental UI Elements for Unity" target="blank"><span class="social-icons linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i><span class="social-icons-text">LinkedIn</span></span>
+</a>
+
+			</div><!-- share --></div><!-- title wrap -->
+									
+									<div class="post-content">
+																					<p>User interface design can be a huge challenge, especially with the wide open possibilities of touchless VR. Today, we’re excited to release a set of three widgets designed for VR and desktop environments. Built in Unity, these three widgets are just the beginning, as we plan to release additional building blocks in the future – so you have the tools you need to build the platform beyond the screen.</p>
+<p>In this post, we’ll take a close look at each of the three widgets – toggle button, slider, and scroll – as well as our design inspirations and a sample Unity scene. You can download the Widgets Unity assets from our <a href="https://developer.leapmotion.com/gallery/widgets">Examples Gallery</a>.</p>
+<p><a class="readbutton" href="https://developer.leapmotion.com/gallery/widgets">DOWNLOAD NOW »</a></p>
+<p><span id="more-1916"></span></p>
+<p><i>(Note: Before you download the Widgets demos, be sure to install the </i><a href="https://developer.leapmotion.com/downloads/unity"><i>latest Unity package</i></a><i> and VR assets. The demos are designed to be used with an Oculus Rift and head-mounted Leap Motion Controller with </i><a href="https://www.leapmotion.com/product/vr"><i>VR Developer Mount</i></a><i>. The Widgets assets themselves can be used on desktop and VR.)</i></p>
+<p><iframe src="//player.vimeo.com/video/103444239" width="500" height="281" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<h2>Visual design inspiration</h2>
+<p>In designing Widgets, we were inspired by Kristoffer Brady’s <a href="http://bytheodore.com/projects/simian-ui">amazing work</a> on the upcoming independent short <i>SIMIAN</i> – featuring clean lines, sharp colors, and a cool futuristic feel.</p>
+<p>As with the UI elements in the video above, our Widgets are comprised of a series of 2D planes that “hover” over each other. These 2D planes (or interface components) compress in z-space when they’re activated.</p>
+<p><img class="alignright size-full wp-image-1933" src="http://blog.leapmotion.com/wp-content/uploads/2014/11/VR-WidgetButtonGood.gif" alt="VR-WidgetButtonGood" width="864" height="388" /></p>
+<h2>Toggle Button Widget</h2>
+<p>Designed to function by itself or in a grid, the <b>Toggle Button Widget</b> has a wide variety of potential uses, including:</p>
+<ul>
+<li>menu items (e.g. toggle subtitles, start game, etc.)</li>
+<li>toggling doors to open/close</li>
+<li>reaction-based games (e.g. drumming)</li>
+<li>in-game controls (e.g. an ignition button or cockpit switch)</li>
+</ul>
+<p>This widget consists of three 2D planes: the text, the button surface, and the anchor surface (surrounding layer). When you press the widget, the text and surface both compress in Z-Space until they touch the anchor surface, which activates the button. When the button changes state as a result, it will appear illuminated, and the button text will change.</p>
+<p>As with all the widgets that we’re releasing today, the button is highly customizable through the use of different text, Unity materials, and colors. While we’ve designed it to be activated with a single finger, the fact that we used the standard Unity Physics Engine to handle collision detection means that you can expand the size of the button inside the Unity Scene editor – creating larger buttons with ease.</p>
+<p><img class="alignright size-full wp-image-1921" src="http://blog.leapmotion.com/wp-content/uploads/2014/11/blog-widgets.gif" alt="blog-widgets" width="864" height="330" /></p>
+<h2>Slider Widget</h2>
+<p>Like the toggle button, the <b>Slider Widget</b> is intended to be activated by a single finger – just press on the slider bar to engage and change the value associated with the slider. As you can see in the image above, this widget consists of three 2D planes surrounded by colliders that compress when you engage the slider.</p>
+<p>As the slider changes value, the indicator lights change state – providing an additional affordance with regard to the current slider position. You can use the slider for:</p>
+<ul>
+<li>menu items (e.g. adjust brightness)</li>
+<li>in-game controls (e.g. airplane accelerator)</li>
+</ul>
+<p><img class="alignright size-full wp-image-1934" src="http://blog.leapmotion.com/wp-content/uploads/2014/11/VRHorizontalScrollGoodLoop.gif" alt="VRHorizontalScrollGoodLoop" width="864" height="216" /></p>
+<h2>Scroll Widget</h2>
+<p>The third and final widget in today’s release is the<b> Scroll Widget</b>. It’s important to note that this isn’t a “scrollbar” widget – instead of interacting with the scrollbar, you actually interact with the scrollable content itself.</p>
+<p>How does this work? By reaching “into” the scrollable content directly with their hand, users can move the content directly. While you can see a scrollbar alongside the content, this is only used to indicate your current position within the content accessible via the Scroll Widget. This might sound like a complex interaction model, but in practice it feels quite natural, and performed very well in our usability testing.</p>
+<p>We provide two versions of the Scroll Widget – a Widget for scrolling content vertically and a second Widget for scrolling content horizontally. They can be used for:</p>
+<ul>
+<li>user instructions</li>
+<li>chat logs</li>
+<li>scrolling through pictures</li>
+</ul>
+<p>As with the other widgets in this release, the Scroll Widget is made up of multiple 2D planes that compress when you engage the Widget – the most important being the scroll pane. This “hovers” over the Scroll anchor element. When pushed in, it acts like a clutch that engages the scroll functionality.</p>
+<h1>The Widgets VR Unity scene</h1>
+<p>To help you get started, we’ve created a VR-based Unity scene, featuring:</p>
+<ul>
+<li>the Button and Slider Widgets placed directly in front of your field of view,</li>
+<li>the vertical Scroll Widget placed to the left and right of your field of view (turn your head left and right to see them)</li>
+<li>the horizontal Scroll Widget placed behind you (turn around to see it – but watch for cable snags!)</li>
+</ul>
+<p>To try the scene, make sure that you’ve followed the <a href="https://developer.leapmotion.com/getting-started/unity">setup instructions</a> for our Unity core assets and VR assets. You can download Widgets (including the sample scene) with the link below, or see the source code at <a href="https://github.com/leapmotion-examples/LeapMotionWidgets ">github.com/leapmotion-examples/LeapMotionWidgets </a>.</p>
+<p><a class="readbutton" href="https://developer.leapmotion.com/gallery/widgets">DOWNLOAD NOW »</a></p>
+<h1>What’s next for Widgets?</h1>
+<p>These three widgets are just the beginning, as we plan to produce a complete Widget set that lets you develop Leap-enabled UIs without needing to worry about the challenges and complexity of native hand tracking. At the same time, this will ensure a smoother and more intuitive experience across different apps.</p>
+<p>We’d really appreciate your feedback on these Widgets, so we’ve created a one-minute survey. How can we improve these three widgets? What would you like to see next? Let us know!</p>
+<p><a class="readbutton" href="https://www.surveymonkey.com/s/2BFF7C9">Send your feedback »</a></p>
+<p>Note: An earlier version of this post listed the assets as VR Widgets. In fact, these widgets are great for desktop and VR – so we changed the name.</p>
+<div id="cab-author" class="cab-author">
+<div class="cab-author-inner">
+<div class="cab-author-image">
+					<img src="https://blog.leapmotion.com/wp-content/uploads/2014/11/Andrew-Regular.png"  width="75" height="75" /></p>
+<div class="cab-author-overlay"></div>
+</p></div>
+<p> <!-- .cab-author-image --></p>
+<div class="cab-author-info">
+<div class="cab-author-name"><a href="https://www.leapmotion.com/blog/author/andrewlittlefield/" rel="author" class="cab-author-name">Andrew Littlefield</a></div>
+<p>Andrew is a Senior Product Manager at Leap Motion. Prior to joining Leap Motion, he founded two companies focused on delivering virtual environment experiences.</p>
+</p></div>
+<p> <!-- .cab-author-info -->
+			</div>
+<p> <!-- .cab-author-inner -->
+		</div>
+<p> <!-- .cab-author-shortcodes --></p>
+<div class='rp4wp-related-posts'>
+<h3>Recommended Posts</h3>
+<ul>
+<li><div class='rp4wp-related-post-content'>
+<a href='http://blog.leapmotion.com/leap-first-person-look/'>Leap First Person Look</a></div>
+</li>
+<li><div class='rp4wp-related-post-content'>
+<a href='http://blog.leapmotion.com/leap-motion-unity-unite-seattle-2014/'>Leap Motion @ Unite Seattle 2014</a></div>
+</li>
+<li><div class='rp4wp-related-post-content'>
+<a href='http://blog.leapmotion.com/leap-physics-sandbox/'>Leap Physics Sandbox</a></div>
+</li>
+<li><div class='rp4wp-related-post-content'>
+<a href='http://blog.leapmotion.com/leap-motion-by-the-numbers/'>Leap Motion By the Numbers</a></div>
+</li>
+<li><div class='rp4wp-related-post-content'>
+<a href='http://blog.leapmotion.com/leap-motion-sets-a-course-for-vr/'>Leap Motion Sets a Course for VR</a></div>
+</li>
+</ul>
+</div>
+											
+																							<div class="pagelink">
+																									</div>
+																														<div id='limk_horizontal_widget_placeholder'></div></div><!-- post content -->
+								</div><!-- frame -->
+								
+								<!-- post meta -->
+								
+
+	<div class="bar">
+		<div class="bar-frame clearfix">
+
+			
+							<div class="bar-categories">
+											<div class="categories">
+							<i class="icon-list-ul"></i>
+							<a href="http://blog.leapmotion.com/category/art/" rel="category tag">Art &amp; Design</a>, <a href="http://blog.leapmotion.com/category/arvr/" rel="category tag">Augmented &amp; Virtual Reality</a>, <a href="http://blog.leapmotion.com/category/code/foss/" rel="category tag">Free and Open Source</a>, <a href="http://blog.leapmotion.com/category/gaming/" rel="category tag">Gaming</a>, <a href="http://blog.leapmotion.com/category/hardware/" rel="category tag">Hardware</a>, <a href="http://blog.leapmotion.com/category/labs/leapteam/" rel="category tag">Leap Motion Team</a>, <a href="http://blog.leapmotion.com/category/unity/" rel="category tag">Unity</a>, <a href="http://blog.leapmotion.com/category/ux/" rel="category tag">UX Design</a>						</div>
+					
+				  	<div class="tags">
+				  		<i class="icon-tag"></i>
+				  		<a href="http://blog.leapmotion.com/tag/widgets/" rel="tag">widgets</a>
+				  	</div>			  	</div><!-- bar categories -->
+		  				<div class="share">
+								
+				<!-- facebook -->
+				<a class="share-facebook" onclick="window.open('http://www.facebook.com/share.php?u=http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/','facebook','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="http://www.facebook.com/share.php?u=http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/" title="Introducing Widgets: Fundamental UI Elements for Unity"  target="blank"><span class="social-icons facebook"><i class="fa fa-facebook" aria-hidden="true"></i><span class="social-icons-text">Share</span></span></a>
+				
+				<!-- twitter -->
+				<a class="share-twitter" onclick="window.open('http://twitter.com/home?status=Introducing Widgets: Fundamental UI Elements for Unity - http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/ &#64;leapmotion','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="http://twitter.com/home?status=Introducing Widgets: Fundamental UI Elements for Unity - http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/" title="Introducing Widgets: Fundamental UI Elements for Unity &#64;leapmotion" target="blank"><span class="social-icons twitter"><i class="fa fa-twitter" aria-hidden="true"></i><span class="social-icons-text">Tweet</span></span>
+</a>
+
+
+				<!-- linkedin -->
+				<a class="share-linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/&title=Introducing Widgets: Fundamental UI Elements for Unity','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="https://www.linkedin.com/shareArticle?mini=true&url=http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/&title=Introducing Widgets: Fundamental UI Elements for Unity" target="blank"><span class="social-icons linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i><span class="social-icons-text">LinkedIn</span></span>
+</a>
+				<!-- reddit -->
+
+<span class="reddit"><script type="text/javascript">
+  reddit_url = "http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/"; reddit_bgcolor = "f7f7f7"; reddit_bordercolor = "FFF"; reddit_target= "leapmotion"</script><script type="text/javascript" src="//www.redditstatic.com/button/button3.js"></script></span>
+
+			</div><!-- share -->
+		</div><!-- bar frame -->
+	</div><!-- bar -->							</div><!-- box -->
+						</div><!-- post-->
+					
+									</div><!-- post wrap -->
+
+				<!-- post navigation -->
+				
+<!-- next and previous posts -->	
+	<div class="next-prev">
+		<div class="prev-post"><strong class="next-prev-title">Previous Post</strong><span><a href="http://blog.leapmotion.com/3d-jam-avert-nuclear-annihilation-rhythm-red-alert/" rel="prev">#3DJam: Avert Nuclear Annihilation with Rhythm Red Alert</a></span></div>		<div class="next-post"><strong class="next-prev-title">Next Post</strong><span><a href="http://blog.leapmotion.com/3d-jam-race-streets-souped-heavily-armed-ferrari/" rel="next">#3DJam: Race through the Streets in a Souped-Up, Heavily Armed Ferrari</a></span></div>	</div><!-- next prev -->
+				
+<!-- post navigation -->
+				
+							<!-- end posts -->
+			
+			<!-- comments -->
+												
+<div id="comments" class="comments">
+	<div class="comments-wrap">
+		<ol class="commentlist">
+				<li class="comment even thread-even depth-1 clearfix" id="li-comment-523">
+		
+		<div class="comment-block" id="comment-523">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/9e031b5c767b7544e052c15add464f69?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9e031b5c767b7544e052c15add464f69?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">Gerald Terveen</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>Very nice &#8211; is there any reason to assume these won&#8217;t work with a non headmounted Leap?</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-523' data-commentid="523" data-postid="1916" data-belowelement="comment-523" data-respondelement="respond" aria-label='Reply to Gerald Terveen'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-523">November 8, 2014 at 6:17 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+<ul class="children">
+	<li class="comment odd alt depth-2 clearfix" id="li-comment-529">
+		
+		<div class="comment-block" id="comment-529">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/f0b86337477de3f63d5beb23f010fbb9?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/f0b86337477de3f63d5beb23f010fbb9?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">leapmotion</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>They should work just fine &#8212; they use collision detection, and pointing fingers track well 😀</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-529' data-commentid="529" data-postid="1916" data-belowelement="comment-529" data-respondelement="respond" aria-label='Reply to leapmotion'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-529">November 10, 2014 at 4:49 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+<ul class="children">
+	<li class="comment even depth-3 clearfix" id="li-comment-3100">
+		
+		<div class="comment-block" id="comment-3100">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">Tyler Waite</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p><a href="https://goo.gl/sBcGoa&#038;xyza" rel="nofollow">https://goo.gl/sBcGoa&#038;xyza</a></p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-3100' data-commentid="3100" data-postid="1916" data-belowelement="comment-3100" data-respondelement="respond" aria-label='Reply to Tyler Waite'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-3100">April 24, 2018 at 1:08 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt depth-2 clearfix" id="li-comment-3099">
+		
+		<div class="comment-block" id="comment-3099">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">Tyler Waite</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p><a href="https://goo.gl/ejbw1U&#038;qovj" rel="nofollow">https://goo.gl/ejbw1U&#038;qovj</a></p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-3099' data-commentid="3099" data-postid="1916" data-belowelement="comment-3099" data-respondelement="respond" aria-label='Reply to Tyler Waite'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-3099">April 24, 2018 at 1:08 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="pingback even thread-odd thread-alt depth-1 clearfix" id="li-comment-525">
+		
+		<div class="comment-block" id="comment-525">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='http://panora.tokyo/290/' rel='external nofollow' class='url'>PANORA VIRTUAL REALITY JAPAN &raquo; サイバー感がヤバい　Leap Motionに3つのVRウィジェットが登場</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] ●関連リンク ・Introducing VR Widgets: Fundamental UI Elements for Oculus + Unity [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-525' data-commentid="525" data-postid="1916" data-belowelement="comment-525" data-respondelement="respond" aria-label='Reply to PANORA VIRTUAL REALITY JAPAN &raquo; サイバー感がヤバい　Leap Motionに3つのVRウィジェットが登場'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-525">November 8, 2014 at 8:06 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="pingback odd alt thread-even depth-1 clearfix" id="li-comment-526">
+		
+		<div class="comment-block" id="comment-526">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://2.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='http://www.scoop.it/t/elearning-tics-didactica-digital/p/4031390958/2014/11/09/vr-widgets-fundamental-ui-elements-for-oculus-unity' rel='external nofollow' class='url'>VR Widgets: Fundamental UI Elements for Oculus ...</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] User interface design can be a huge challenge, especially with the possibilities of VR. Today, we&rsquo;re excited to release three widgets designed for VR.&nbsp; [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-526' data-commentid="526" data-postid="1916" data-belowelement="comment-526" data-respondelement="respond" aria-label='Reply to VR Widgets: Fundamental UI Elements for Oculus ...'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-526">November 9, 2014 at 6:24 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1 clearfix" id="li-comment-545">
+		
+		<div class="comment-block" id="comment-545">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://2.gravatar.com/avatar/213d2ea4f80493f61b9c8e56492f65e5?s=75&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/213d2ea4f80493f61b9c8e56492f65e5?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='http://robertholtz.com/' rel='external nofollow' class='url'>Robert Holtz</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>This looks fantastic! Well done, Leap Motion.</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-545' data-commentid="545" data-postid="1916" data-belowelement="comment-545" data-respondelement="respond" aria-label='Reply to Robert Holtz'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-545">November 11, 2014 at 9:29 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+<ul class="children">
+	<li class="comment odd alt depth-2 clearfix" id="li-comment-3090">
+		
+		<div class="comment-block" id="comment-3090">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">Tyler Waite</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p><a href="https://goo.gl/MAByNm&#038;yfil" rel="nofollow">https://goo.gl/MAByNm&#038;yfil</a></p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-3090' data-commentid="3090" data-postid="1916" data-belowelement="comment-3090" data-respondelement="respond" aria-label='Reply to Tyler Waite'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-3090">April 24, 2018 at 1:08 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 clearfix" id="li-comment-546">
+		
+		<div class="comment-block" id="comment-546">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://1.gravatar.com/avatar/450a57a71d539498be2fde3700e922fb?s=75&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/450a57a71d539498be2fde3700e922fb?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">bonjohnson</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>How do we know when to stop pushing our hand forward?  How can we avoid putting our hand outside of the Leapmotion active zone?  </p>
+<p>Game controllers have had physical feedback (vibration) for a while.  It seems to me that if we&#8217;re reaching into 3D space with a headmount on, a certain type of physical feedback would assist us to not need to extend our whole arm.  </p>
+<p>In other words&#8211; is there talk of some type of physical feedback glove?  =^]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-546' data-commentid="546" data-postid="1916" data-belowelement="comment-546" data-respondelement="respond" aria-label='Reply to bonjohnson'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-546">November 11, 2014 at 10:31 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+<ul class="children">
+	<li class="comment odd alt depth-2 clearfix" id="li-comment-547">
+		
+		<div class="comment-block" id="comment-547">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/f0b86337477de3f63d5beb23f010fbb9?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/f0b86337477de3f63d5beb23f010fbb9?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">leapmotion</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>Good question! We believe that bare-handed tracking will be part of what makes VR both immersive and accessible. For the current generation hardware, we recommend using dynamic visual feedback and smart use of virtual space. This can subtly shape people&#8217;s experiences and keep them within the Leap&#8217;s tracking range (bearing in mind that most fine-tuned hand interactions IRL aren&#8217;t performed with arms fully outstretched).</p>
+<p>One way to accomplish this would be placing virtual objects within the tracking range &#8212; so that widgets appear to be within two feet of you. Another would be dynamic visual feedback like having the hands begin to fade like ghosts as tracking confidence dips below a certain level.</p>
+<p>Beyond these immediate solutions, we&#8217;re developing an embeddable hardware prototype, called Dragonfly, which overcomes many of the current peripheral&#8217;s limitations.</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-547' data-commentid="547" data-postid="1916" data-belowelement="comment-547" data-respondelement="respond" aria-label='Reply to leapmotion'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-547">November 11, 2014 at 12:08 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+<ul class="children">
+	<li class="comment even depth-3 clearfix" id="li-comment-3098">
+		
+		<div class="comment-block" id="comment-3098">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">Tyler Waite</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p><a href="https://goo.gl/9XuYPU&#038;jpad" rel="nofollow">https://goo.gl/9XuYPU&#038;jpad</a></p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-3098' data-commentid="3098" data-postid="1916" data-belowelement="comment-3098" data-respondelement="respond" aria-label='Reply to Tyler Waite'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-3098">April 24, 2018 at 1:08 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt depth-2 clearfix" id="li-comment-3097">
+		
+		<div class="comment-block" id="comment-3097">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">Tyler Waite</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p><a href="https://goo.gl/ciQGh8&#038;umym" rel="nofollow">https://goo.gl/ciQGh8&#038;umym</a></p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-3097' data-commentid="3097" data-postid="1916" data-belowelement="comment-3097" data-respondelement="respond" aria-label='Reply to Tyler Waite'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-3097">April 24, 2018 at 1:08 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="pingback even thread-odd thread-alt depth-1 clearfix" id="li-comment-548">
+		
+		<div class="comment-block" id="comment-548">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://1.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='http://www.indiehangover.com/new-leap-motion-vr-widgets-and-ui-elements-for-unity-and-oculus/' rel='external nofollow' class='url'>New Leap Motion VR Widgets And UI Elements For Unity And Oculus | IndieHangover</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] developers at Leap Motion have several new VR assets and UI elements for download, for free, on their Developer Portal. The three additions for Unity include a Toggle Button, [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-548' data-commentid="548" data-postid="1916" data-belowelement="comment-548" data-respondelement="respond" aria-label='Reply to New Leap Motion VR Widgets And UI Elements For Unity And Oculus | IndieHangover'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-548">November 11, 2014 at 3:23 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1 clearfix" id="li-comment-550">
+		
+		<div class="comment-block" id="comment-550">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">Tyler Waite</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>Looks awesome. I was waiting for something like this to come out. Unfortunately, though, we&#8217;re developing in Unreal Engine and are fairly committed to the system. Is there any chance in this being ported over to UE4?</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-550' data-commentid="550" data-postid="1916" data-belowelement="comment-550" data-respondelement="respond" aria-label='Reply to Tyler Waite'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-550">November 12, 2014 at 3:51 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+<ul class="children">
+	<li class="comment even depth-2 clearfix" id="li-comment-3096">
+		
+		<div class="comment-block" id="comment-3096">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">Tyler Waite</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p><a href="https://goo.gl/Av7L1m&#038;zewu" rel="nofollow">https://goo.gl/Av7L1m&#038;zewu</a></p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-3096' data-commentid="3096" data-postid="1916" data-belowelement="comment-3096" data-respondelement="respond" aria-label='Reply to Tyler Waite'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-3096">April 24, 2018 at 1:08 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 clearfix" id="li-comment-589">
+		
+		<div class="comment-block" id="comment-589">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/326ebbb8dfae74c7bf5fdc67acc2cfb3?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/326ebbb8dfae74c7bf5fdc67acc2cfb3?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">Jonathan Carewick</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>Any pointers on using these in Unity Free? I&#8217;m able to download and open the project in Unity Free, but get license errors. The project builds just fine, which is all good, except the Scroll widget doesn&#8217;t work correct and I can&#8217;t seem to run the project in unity, it just crashes unity every time. I believe the issue may have been the version of Oculus Unity Integration included in the project when you download, perhaps that required pro? I was interested in making my own free project and import the slider widget, but had glitches with the box surrounding it for collision detection. It kept jumping around. </p>
+<p>I do enjoy the free VR assets you provided on your download site, they all work great! Keep up the good work! I also enjoyed playing around with these widgets bugs and all it worked well still if I stuck to building within your project.</p>
+<p>P.S. I&#8217;m just getting started learning unity, so I might be missing something obvious.</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-589' data-commentid="589" data-postid="1916" data-belowelement="comment-589" data-respondelement="respond" aria-label='Reply to Jonathan Carewick'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-589">December 4, 2014 at 1:24 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+<ul class="children">
+	<li class="comment even depth-2 clearfix" id="li-comment-590">
+		
+		<div class="comment-block" id="comment-590">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/f0b86337477de3f63d5beb23f010fbb9?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/f0b86337477de3f63d5beb23f010fbb9?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">leapmotion</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>Hey Jonathon, the current version of Scroll requires Unity Pro, but we&#8217;re looking to fix that in the next release. What sorts of widgets would you like to see next?</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-590' data-commentid="590" data-postid="1916" data-belowelement="comment-590" data-respondelement="respond" aria-label='Reply to leapmotion'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-590">December 10, 2014 at 10:38 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+<ul class="children">
+	<li class="comment odd alt depth-3 clearfix" id="li-comment-591">
+		
+		<div class="comment-block" id="comment-591">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/326ebbb8dfae74c7bf5fdc67acc2cfb3?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/326ebbb8dfae74c7bf5fdc67acc2cfb3?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">Jonathan Carewick</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>Thanks for letting me know, that makes sense. I loved what you did with the widgets, they work very naturally. I was actually thinking about what was missing from here and although I love the &#8220;on/off&#8221; toggle, I&#8217;d love to see you make it work with a text mesh. I don&#8217;t know if it&#8217;s possible, but I found it kind of hard to change for a new person to Unity. It is an actual model of text that says on or off, which I wasn&#8217;t able to change that easy. I&#8217;d love it to be a font or something where we could just pop in our own text. It&#8217;s just a thought. They all look amazing though! </p>
+<p>I tried to convert it to a text mesh myself and for some reason I was getting a strange bug where the Oculus Warping was messing up the text mesh. I must have been doing something wrong though.</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-591' data-commentid="591" data-postid="1916" data-belowelement="comment-591" data-respondelement="respond" aria-label='Reply to Jonathan Carewick'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-591">December 10, 2014 at 11:23 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+<ul class="children">
+	<li class="comment byuser comment-author-alex even depth-4 clearfix" id="li-comment-595">
+		
+		<div class="comment-block" id="comment-595">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://2.gravatar.com/avatar/8c66c4d1caacb3ad4f8a24ccc512ba89?s=75&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/8c66c4d1caacb3ad4f8a24ccc512ba89?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='https://www.leapmotion.com/blog/author/Alex/' rel='external nofollow' class='url'>Alex Colgan</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>Cool idea! Passing along to our Widgets team 😀</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-595' data-commentid="595" data-postid="1916" data-belowelement="comment-595" data-respondelement="respond" aria-label='Reply to Alex Colgan'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-595">December 12, 2014 at 9:01 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="comment odd alt depth-4 clearfix" id="li-comment-3095">
+		
+		<div class="comment-block" id="comment-3095">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">Tyler Waite</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p><a href="https://goo.gl/UMSdwL&#038;vjpul" rel="nofollow">https://goo.gl/UMSdwL&#038;vjpul</a></p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-3095' data-commentid="3095" data-postid="1916" data-belowelement="comment-3095" data-respondelement="respond" aria-label='Reply to Tyler Waite'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-3095">April 24, 2018 at 1:08 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even depth-3 clearfix" id="li-comment-3094">
+		
+		<div class="comment-block" id="comment-3094">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">Tyler Waite</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p><a href="https://goo.gl/pNB4tV&#038;cilim" rel="nofollow">https://goo.gl/pNB4tV&#038;cilim</a></p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-3094' data-commentid="3094" data-postid="1916" data-belowelement="comment-3094" data-respondelement="respond" aria-label='Reply to Tyler Waite'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-3094">April 24, 2018 at 1:08 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt depth-2 clearfix" id="li-comment-3093">
+		
+		<div class="comment-block" id="comment-3093">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">Tyler Waite</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p><a href="https://goo.gl/fycVq1&#038;sewat" rel="nofollow">https://goo.gl/fycVq1&#038;sewat</a></p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-3093' data-commentid="3093" data-postid="1916" data-belowelement="comment-3093" data-respondelement="respond" aria-label='Reply to Tyler Waite'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-3093">April 24, 2018 at 1:08 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="pingback even thread-even depth-1 clearfix" id="li-comment-599">
+		
+		<div class="comment-block" id="comment-599">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='http://blog.leapmotion.com/arm-hud-widget-like-smartwatch-entire-arm/' rel='external nofollow' class='url'>Arm HUD Widget: Like a Smartwatch for Your Entire Arm</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] into some exciting projects that we have in the works for the new year. Since launching our first set of test Widgets last month, we’ve continued to build on this early work, and we’ll soon be releasing an expanded set of [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-599' data-commentid="599" data-postid="1916" data-belowelement="comment-599" data-respondelement="respond" aria-label='Reply to Arm HUD Widget: Like a Smartwatch for Your Entire Arm'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-599">December 18, 2014 at 6:33 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="pingback odd alt thread-odd thread-alt depth-1 clearfix" id="li-comment-602">
+		
+		<div class="comment-block" id="comment-602">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://2.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='http://blog.leapmotion.com/leapjs-widgets-new-library-3d-web-design/' rel='external nofollow' class='url'>LeapJS Widgets: A New Library for 3D Web Design</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] said Unity developers have all the fun? From building virtual hands in Three.js to browser-based virtual reality, we’re also developing [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-602' data-commentid="602" data-postid="1916" data-belowelement="comment-602" data-respondelement="respond" aria-label='Reply to LeapJS Widgets: A New Library for 3D Web Design'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-602">December 19, 2014 at 6:20 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="pingback even thread-even depth-1 clearfix" id="li-comment-632">
+		
+		<div class="comment-block" id="comment-632">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='http://blog.leapmotion.com/new-demo-switch-vr-real-world-simple-gesture/' rel='external nofollow' class='url'>New Demo: Switch from VR to the Real World with a Simple Gesture - Leap Motion Blog</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] the real and virtual worlds in ways that we can scarcely imagine. Much like our recent work on the core Widgets and Arm HUD, Quick Switch designed to give you a big headstart in creating compelling VR/AR [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-632' data-commentid="632" data-postid="1916" data-belowelement="comment-632" data-respondelement="respond" aria-label='Reply to New Demo: Switch from VR to the Real World with a Simple Gesture - Leap Motion Blog'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-632">January 3, 2015 at 7:02 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="pingback odd alt thread-odd thread-alt depth-1 clearfix" id="li-comment-670">
+		
+		<div class="comment-block" id="comment-670">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://1.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='http://blog.leapmotion.com/leap-motion-vr-2015-look-year-ahead/' rel='external nofollow' class='url'>Leap Motion + VR 2015: A Look at the Year Ahead</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] VR. To help developers create truly groundbreaking experiences, we’ve been working on a series of fundamental UI elements designed for VR. Starting with smaller elements like buttons, sliders, and scrollers, we’re now taking these [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-670' data-commentid="670" data-postid="1916" data-belowelement="comment-670" data-respondelement="respond" aria-label='Reply to Leap Motion + VR 2015: A Look at the Year Ahead'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-670">January 8, 2015 at 3:02 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="pingback even thread-even depth-1 clearfix" id="li-comment-694">
+		
+		<div class="comment-block" id="comment-694">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='http://blog.leapmotion.com/weightless-creator-martin-schubert-designing-zero-gravity-sci-fi-playground/' rel='external nofollow' class='url'>Weightless Creator on Designing a Zero-G Sci-Fi Playground</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] occupy physical volumes and change color when you touch them. I was going to use Leap Motion’s VR Widget Buttons because they feel really great and tactile since they use physics to react to your touch. However I [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-694' data-commentid="694" data-postid="1916" data-belowelement="comment-694" data-respondelement="respond" aria-label='Reply to Weightless Creator on Designing a Zero-G Sci-Fi Playground'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-694">January 15, 2015 at 7:00 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="pingback odd alt thread-odd thread-alt depth-1 clearfix" id="li-comment-723">
+		
+		<div class="comment-block" id="comment-723">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='http://blog.leapmotion.com/introducing-planetarium-design-science-behind-vr-widgets-showcase/' rel='external nofollow' class='url'>Introducing Planetarium: A Stellar Showcase for UI Widgets</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] to the third installment of the Widgets Team developer diaries (part 1, part 2). We’re switching up the format of this post a little and giving you the opportunity to [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-723' data-commentid="723" data-postid="1916" data-belowelement="comment-723" data-respondelement="respond" aria-label='Reply to Introducing Planetarium: A Stellar Showcase for UI Widgets'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-723">February 2, 2015 at 7:31 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="pingback even thread-even depth-1 clearfix" id="li-comment-743">
+		
+		<div class="comment-block" id="comment-743">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://1.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='http://blog.leapmotion.com/designing-widgets-event-data-binding-model/' rel='external nofollow' class='url'>Designing the Widgets Event and Data-Binding Model</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] first iteration of Widgets we released to developers was cut almost directly from a set of internal interaction design [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-743' data-commentid="743" data-postid="1916" data-belowelement="comment-743" data-respondelement="respond" aria-label='Reply to Designing the Widgets Event and Data-Binding Model'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-743">February 7, 2015 at 7:01 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="pingback odd alt thread-odd thread-alt depth-1 clearfix" id="li-comment-853">
+		
+		<div class="comment-block" id="comment-853">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='http://blog.leapmotion.com/4-design-problems-vr-tracking-solve/' rel='external nofollow' class='url'>4 Design Problems for VR Tracking (And How to Solve Them)</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] movement. For example, grabbing is a distinct action that can signal intent. For UI design, Widgets should be positioned (and spaced apart) to prevent accidental triggering. Dynamic visual feedback [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-853' data-commentid="853" data-postid="1916" data-belowelement="comment-853" data-respondelement="respond" aria-label='Reply to 4 Design Problems for VR Tracking (And How to Solve Them)'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-853">April 13, 2015 at 8:03 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="pingback even thread-even depth-1 clearfix" id="li-comment-908">
+		
+		<div class="comment-block" id="comment-908">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='http://blog.leapmotion.com/vr-interfaces-teapots-common/' rel='external nofollow' class='url'>What Do VR Interfaces and Teapots Have in Common?</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] Introducing Widgets: Fundamental UI Elements for Unity [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-908' data-commentid="908" data-postid="1916" data-belowelement="comment-908" data-respondelement="respond" aria-label='Reply to What Do VR Interfaces and Teapots Have in Common?'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-908">April 29, 2015 at 4:45 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="pingback odd alt thread-odd thread-alt depth-1 clearfix" id="li-comment-916">
+		
+		<div class="comment-block" id="comment-916">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://1.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='http://blog.leapmotion.com/build-button-workshop-vr-interaction-design-ground/' rel='external nofollow' class='url'>Build-a-Button Workshop: VR Interaction Design</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] Introducing Widgets: Fundamental UI Elements for Unity [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-916' data-commentid="916" data-postid="1916" data-belowelement="comment-916" data-respondelement="respond" aria-label='Reply to Build-a-Button Workshop: VR Interaction Design'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-916">May 1, 2015 at 7:00 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="pingback even thread-even depth-1 clearfix" id="li-comment-918">
+		
+		<div class="comment-block" id="comment-918">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='http://blog.leapmotion.com/vr-transform-world-3d-animation/' rel='external nofollow' class='url'>Could VR Transform the World of 3D Animation?</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] its current iteration, Jere&#8217;s VR animation tool uses our Unity UI widgets. The Slider Widget maps out keyframes and interpolation for the character in the scene from one [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-918' data-commentid="918" data-postid="1916" data-belowelement="comment-918" data-respondelement="respond" aria-label='Reply to Could VR Transform the World of 3D Animation?'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-918">May 2, 2015 at 6:01 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="pingback odd alt thread-odd thread-alt depth-1 clearfix" id="li-comment-919">
+		
+		<div class="comment-block" id="comment-919">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='http://www.technologynews-today.com/could-vr-transform-the-world-of-3d-animation/' rel='external nofollow' class='url'>Could VR Transform the World of 3D Animation?</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] its current iteration, Jere’s VR animation tool uses our Unity UI widgets. The Slider Widget maps out keyframes and interpolation for the character in the scene from one [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-919' data-commentid="919" data-postid="1916" data-belowelement="comment-919" data-respondelement="respond" aria-label='Reply to Could VR Transform the World of 3D Animation?'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-919">May 3, 2015 at 12:37 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="pingback even thread-even depth-1 clearfix" id="li-comment-1045">
+		
+		<div class="comment-block" id="comment-1045">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://1.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='https://blog.leapmotion.com/4-ways-unleash-power-sound-vr/' rel='external nofollow' class='url'>4 Ways to Unleash the Power of Sound in VR</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] button clicks using the Leap Motion Unity Widgets, to the humming Plasma Ball, sound has the power to make users feel more confident interacting with [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-1045' data-commentid="1045" data-postid="1916" data-belowelement="comment-1045" data-respondelement="respond" aria-label='Reply to 4 Ways to Unleash the Power of Sound in VR'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-1045">June 1, 2015 at 6:59 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="pingback odd alt thread-odd thread-alt depth-1 clearfix" id="li-comment-1053">
+		
+		<div class="comment-block" id="comment-1053">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://1.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='https://blog.leapmotion.com/getting-started-unity-oculus-rift/' rel='external nofollow' class='url'>Getting Started with Unity and the Oculus Rift</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] with the wide open possibilities of touchless VR. That&#8217;s why we’ve built a set of four UI widgets designed for VR and desktop [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-1053' data-commentid="1053" data-postid="1916" data-belowelement="comment-1053" data-respondelement="respond" aria-label='Reply to Getting Started with Unity and the Oculus Rift'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-1053">June 3, 2015 at 12:18 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 clearfix" id="li-comment-1194">
+		
+		<div class="comment-block" id="comment-1194">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://2.gravatar.com/avatar/5fdf64f0bcb50e43e9aaf6f72a38ce33?s=75&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/5fdf64f0bcb50e43e9aaf6f72a38ce33?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">Ryan Wang</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>Awesome, this is super cool and helpful.</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-1194' data-commentid="1194" data-postid="1916" data-belowelement="comment-1194" data-respondelement="respond" aria-label='Reply to Ryan Wang'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-1194">July 18, 2015 at 12:33 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+<ul class="children">
+	<li class="comment odd alt depth-2 clearfix" id="li-comment-3092">
+		
+		<div class="comment-block" id="comment-3092">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">Tyler Waite</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p><a href="https://goo.gl/BS9WsQ&#038;ekupo" rel="nofollow">https://goo.gl/BS9WsQ&#038;ekupo</a></p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-3092' data-commentid="3092" data-postid="1916" data-belowelement="comment-3092" data-respondelement="respond" aria-label='Reply to Tyler Waite'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-3092">April 24, 2018 at 1:08 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1 clearfix" id="li-comment-1205">
+		
+		<div class="comment-block" id="comment-1205">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/9692fb27a3f0483e51ad752168b3ccd5?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/9692fb27a3f0483e51ad752168b3ccd5?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">Chillywilson</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>The slider moves in z space for me on Unity 5, is there any way to stop this from happening</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-1205' data-commentid="1205" data-postid="1916" data-belowelement="comment-1205" data-respondelement="respond" aria-label='Reply to Chillywilson'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-1205">July 22, 2015 at 11:36 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+<ul class="children">
+	<li class="comment odd alt depth-2 clearfix" id="li-comment-3091">
+		
+		<div class="comment-block" id="comment-3091">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=75&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/cceb5910409c3587addb86bd61c86f91?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn">Tyler Waite</cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p><a href="https://goo.gl/LfVrsv&#038;nose" rel="nofollow">https://goo.gl/LfVrsv&#038;nose</a></p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-3091' data-commentid="3091" data-postid="1916" data-belowelement="comment-3091" data-respondelement="respond" aria-label='Reply to Tyler Waite'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-3091">April 24, 2018 at 1:08 pm</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="pingback even thread-even depth-1 clearfix" id="li-comment-1586">
+		
+		<div class="comment-block" id="comment-1586">
+			<div class="comment-info">	
+				<div class="comment-author vcard clearfix">
+					<img alt='' src='http://0.gravatar.com/avatar/?s=75&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/?s=150&#038;d=mm&#038;r=g 2x' class='avatar avatar-75 photo avatar-default' height='75' width='75' />					
+					<div class="comment-meta commentmetadata">
+						<cite class="fn"><a href='http://blog.leapmotion.com/redesigning-our-unity-core-assets-new-workflow-and-architecture-for-orion/' rel='external nofollow' class='url'>Redesigning Our Unity Core Assets for Orion</a></cite>					</div>
+				</div>
+			</div><!-- comment info -->
+			
+			<div class="comment-text">
+				<p>[&#8230;] like a package of both new and updated hand models and scripts, a new update to our Leap Motion VR Widgets, and other modules that will make your toolbox more powerful than [&#8230;]</p>
+				
+				<div class="comment-bottom">
+					<p class="reply">
+						<a rel='nofollow' class='comment-reply-link' href='#comment-1586' data-commentid="1586" data-postid="1916" data-belowelement="comment-1586" data-respondelement="respond" aria-label='Reply to Redesigning Our Unity Core Assets for Orion'>Reply</a>					</p>
+										<a class="comment-time" href="http://blog.leapmotion.com/introducing-widgets-fundamental-ui-elements-unity/#comment-1586">May 23, 2016 at 8:35 am</a>
+				</div>
+			</div><!-- comment text -->
+		
+			    
+		</div>
+</li><!-- #comment-## -->
+		</ol>
+		
+			
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><div id="cancel-comment-reply-link" style="display:none;"><i class="icon-remove-sign"></i> </div></small></h3>			<form action="http://blog.leapmotion.com/wp-comments-post.php?wpe-comment-post=lmlabs" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" /></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /><label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='1916' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>			</form>
+			</div><!-- #respond -->
+		</div><!-- .comments-wrap -->
+</div><!-- #comments -->									</div><!--content-->
+		
+		<!-- load the sidebar -->
+			</div><!-- content wrap -->
+
+	<!-- load footer -->
+	
+
+
+
+
+<footer id="footer">
+          <div class="footer-wrapper">
+            <div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Footer Content" data-type="block-field" data-updated-on="1480610263571" id="footerBlocks"><div class="row sqs-row"><div class="col sqs-col-3 span-3"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-1b6f89a578577ca72675"><div class="sqs-block-content"><h2>About Us</h2><p><a target="_blank" href="https://leapmotion.com/contact">Contact Us</a></p><p><a target="_blank" href="https://leapmotion.com/news">Press</a></p><p><a target="_blank" href="https://leapmotion.com/legal">Privacy &amp; Terms</a></p></div></div></div><div class="col sqs-col-3 span-3"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-6e4ac88d1df5f601ddc3"><div class="sqs-block-content"><h2>Technology</h2><p><a target="_blank" href="https://leapmotion.com/technology">Technology</a></p><p><a target="_blank" href="https://www.leapmotion.com/setup">Setup</a></p><p><a target="_blank" href="https://leapmotion.com/showcase">Showcase</a></p><p><a target="_blank" href="https://leapmotion.com/where-to-buy">Where to Buy</a></p><p>&nbsp;</p></div></div></div><div class="col sqs-col-3 span-3"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-ab2ebe1664ffab408cf9"><div class="sqs-block-content"><h2>Developer</h2><p><a href="http://developer.leapmotion.com/">Developer Portal</a></p><p><a href="http://developer.leapmotion.com/get-started">SDK</a></p><p><a href="https://lm-s-leapdev-amnesia.leapmotion.com/documentation/">Docs</a></p><p><a href="http://developer.leapmotion.com/unity">Unity</a></p><p><a href="http://developer.leapmotion.com/unreal">Unreal</a></p></div></div></div><div class="col sqs-col-3 span-3"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-7121c1217e84cf6c7249"><div class="sqs-block-content"><h2>Community</h2><p><a href="http://blog.leapmotion.com">Blog</a></p><p><a href="http://developer.leapmotion.com/blog">Blog</a></p><p><a href="http://community.leapmotion.com">Forums</a></p><p><a href="https://gallery.leapmotion.com">Gallery</a></p><p><a href="http://support.leapmotion.com">Support</a></p><p>&nbsp;</p></div></div></div></div>
+			
+			
+			    <div class="social-links centered" data-social-links></div><!-- social placeholder loaded dynamically -->
+
+
+				<div class="sqs-block code-block sqs-block-code" data-block-type="23" id="block-yui_3_17_2_3_1474829571307_9080"><div class="sqs-block-content"><p class="footer-notice">Copyright © 2019, <a href="https://www.ultraleap.com/" target="_blank">Ultraleap Ltd</a>. Except as noted, all code examples on this web site are licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2.0 license</a>. All other content on this site, except as otherwise noted, is licensed under the <a href="https://central.leapmotion.com/agreements/SdkAgreement" target="_blank">Leap Motion SDK Agreement</a>. Your use of this site is subject to Leap Motion’s <a href="https://www.leapmotion.com/legal/privacy_policy" target="_blank">privacy policy</a>.</p></div>
+
+<!-- ngg_resource_manager_marker --><script type='text/javascript'>
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/blog.leapmotion.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}},"cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.0.5'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-includes/js/imagesloaded.min.js?ver=3.2.0'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/plugins/images-comparison/assets/front/js/front-scripts-min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+
+var nextgen_lightbox_settings = {"static_path":"http:\/\/blog.leapmotion.com\/wp-content\/plugins\/nextgen-gallery\/products\/photocrati_nextgen\/modules\/lightbox\/static","context":"all_images_direct"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/nextgen_gallery_display/static/common.min.js?ver=3.0.16'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/lightbox/static/lightbox_context.min.js?ver=3.0.16'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/lightbox/static/fancybox/jquery.easing-1.3.pack.js?ver=3.0.16'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/lightbox/static/fancybox/jquery.fancybox-1.3.4.pack.js?ver=3.0.16'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/lightbox/static/fancybox/nextgen_fancybox_init.min.js?ver=3.0.16'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/themes/author/includes/js/custom/custom.js?ver=20130731'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/themes/author/includes/js/fitvid/jquery.fitvids.js?ver=20130731'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/themes/author/includes/js/flexslider/jquery.flexslider.js?ver=20130731'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/themes/author/includes/js/html5/html5shiv.js?ver=20130731'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-includes/js/comment-reply.min.js?ver=5.2.4'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-includes/js/wp-embed.min.js?ver=5.2.4'></script>
+<script type='text/javascript' src='http://blog.leapmotion.com/wp-content/plugins/selection-sharer/js/selection-sharer.js?ver=0.1'></script>
+<script>jQuery(document).ready(function ($) { $('p').selectionSharer();});</script><!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WXGVFM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WXGVFM');</script>
+<!-- End Google Tag Manager -->
+    
+<style type="text/css">
+    #wpfront-notification-bar 
+    {
+        background: #5eaa00;
+        background: -moz-linear-gradient(top, #5eaa00 0%, #5eaa00 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5eaa00), color-stop(100%,#5eaa00));
+        background: -webkit-linear-gradient(top, #5eaa00 0%,#5eaa00 100%);
+        background: -o-linear-gradient(top, #5eaa00 0%,#5eaa00 100%);
+        background: -ms-linear-gradient(top, #5eaa00 0%,#5eaa00 100%);
+        background: linear-gradient(to bottom, #5eaa00 0%, #5eaa00 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5eaa00', endColorstr='#5eaa00',GradientType=0 );
+    }
+
+    #wpfront-notification-bar div.wpfront-message
+    {
+        color: #ffffff;
+    }
+
+    #wpfront-notification-bar a.wpfront-button
+    {
+        background: #ffffff;
+        background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#ffffff));
+        background: -webkit-linear-gradient(top, #ffffff 0%,#ffffff 100%);
+        background: -o-linear-gradient(top, #ffffff 0%,#ffffff 100%);
+        background: -ms-linear-gradient(top, #ffffff 0%,#ffffff 100%);
+        background: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+
+        color: #5eaa00;
+    }
+
+    #wpfront-notification-bar-open-button
+    {
+        background-color: #00b7ea;
+    }
+
+    #wpfront-notification-bar  div.wpfront-close 
+    {
+        border: 1px solid #5eaa00;
+        background-color: #5eaa00;
+        color: #ffffff;
+    }
+
+    #wpfront-notification-bar  div.wpfront-close:hover 
+    {
+        border: 1px solid #5eaa00;
+        background-color: #5eaa00;
+    }
+</style>
+
+
+<div id="wpfront-notification-bar-spacer"  style="display: none;">
+    <div id="wpfront-notification-bar-open-button" class="top wpfront-bottom-shadow"></div>
+    <div id="wpfront-notification-bar" class="wpfront-fixed ">
+                    <div class="wpfront-close">X</div>
+                <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td>
+                    <div class="wpfront-message">
+                        Leap Motion and Ultrahaptics are now Ultraleap!                    </div>
+                    <div>
+                                                                                            <a class="wpfront-button" href="https://www.leapmotion.com/news/ultraleap-launches-ready-to-redefine-interaction/"  target="_blank" >LEARN MORE</a>
+                                                                                                            </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<style type="text/css">
+</style>
+<script type="text/javascript">if(typeof wpfront_notification_bar == "function") wpfront_notification_bar({"position":1,"height":0,"fixed_position":false,"animate_delay":0,"close_button":true,"button_action_close_bar":false,"auto_close_after":0,"display_after":0,"is_admin_bar_showing":false,"display_open_button":false,"keep_closed":"on","keep_closed_for":90,"position_offset":0,"display_scroll":false,"display_scroll_offset":0});</script>
+</body>
+</html>
