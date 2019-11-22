@@ -1,0 +1,96 @@
+@charset "UTF-8";
+/* CSS Document */
+html.jobs .slide-background, html.salary .slide-background, html.start .slide-background {
+	opacity: 0.7 !important;
+}
+.reveal p {
+	font-size: 80%;
+}
+	.reveal p.third{
+		float: left;
+		width: 33%;
+		font-size: 60%;
+		text-align: left;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+.reveal div.half{
+		float: left;
+		width: 50%;
+		font-size: 60%;
+		text-align: left;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+.reveal p.small, .reveal span.small {
+	font-size: 60%;
+}
+.reveal p.tiny {
+	font-size: 40%;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 5px;
+}
+ul.dark {
+	list-style: none;
+}
+ul.dark li {
+	list-style: none;
+	height: auto;
+	line-height: normal;
+	margin-top: .1em!important;
+	margin-bottom: .1em!important;
+}
+.dark-back {
+	list-style: none;
+	background-color: #111;
+	padding: .1em!important;
+}
+.info {
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	bottom: 60px;
+	color: #fff;
+}
+div.line {
+	width: 50%;
+	border-right: #fff 1px solid;
+	height: 10px;
+	box-sizing: border-box;
+}
+.grey {
+	background-color: #d5d6d8!important;
+}
+.white {
+	background-color: #fff!important;
+}
+.contain {
+	background-size: contain!important;
+}
+.agile {
+	background-size: 38%!important;
+}
+.reveal p.bullet {
+	list-style: disc inside none;
+	display: list-item;
+}
+#ryan {
+	background-position: center top!important;
+}
+div.jobholder {
+	position: absolute;
+	width: 30vw;
+	top: 0;
+	left: -10vw;
+	background-color: rgba(0,0,0,0.70);
+	border-radius: 25px;
+	padding: 25px;
+	color: white;
+}
+div.jobholder p, div.jobholder h3 {
+	color: white;
+}
+	strong{
+	color: lightcoral
+	}
