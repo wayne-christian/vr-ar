@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ar</title>
+<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+	<script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
+    <script src="js/aframe-extras.js"></script>
+<style>
+	.ui{
+		width: 260px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 9999;
+	}
+	#animations li{
+		background: #1a1a1a;
+    border-bottom: 1px solid #2c2c2c;
+	color: #eee;
+    font: 11px 'Lucida Grande', sans-serif;
+    text-shadow: 0 -1px 0 #111;
+		height: 27px;
+    line-height: 27px;
+	}
+	</style>
+</head>
+
+
+<body style="margin : 0px; overflow: hidden;">
+ <div class="ui">
+  <ul id="animations">
+  	<li id="idle">Idle</li>
+  	<li id="walk">Walk</li>
+  	<li id="run">Run</li>
+  	<li id="sit">Sit</li>
+  	<li id="sit up">Sit up</li>
+  	<li id="jump">Jump</li>
+  	<li id="drink">Drink</li>
+	 </ul>
+  </div> 
+
+  <a-scene embedded artoolkit="sourceType: webcam;" stats>
+    <a-assets>
+     <a-asset-item id="dinomodel" src="models/dino/dino.glb"></a-asset-item>
+ 
+    </a-assets>
+    <a-entity    id ="dino"
+                cursor-listener
+                rotation="0 0 0"
+                animation-mixer="clip: idle"
+               
+                gltf-mode="src: url(models/dino/dino.glb);"
+       
+      ></a-entity>
+    <!--<a-marker preset="hiro">
+      <a-entity
+      id ="dino"
+                cursor-listener
+                rotation="0 0 0"
+                animation-mixer="clip: Idle"               
+                gltf-model="#dinomodel">
+      </a-entity>
+    </a-marker>-->
+    
+    <a-entity camera></a-entity>
+  </a-scene>
+  
+	    <script>
+    
+    var prevData = "clip: Idle; crossFadeDuration: .3";
+    var listenerAdded = false;
+    var scene = document.querySelector('a-scene');  
+    var playOnce = false; 
+ 
+   
+    
+        
+AFRAME.registerComponent('animation-control', {
+  schema: {default: ''},
+  init() {
+     
+    const dino = document.querySelector('#dino'); 
+    var jumpBut = document.querySelector('#jump');
+    var runBut = document.querySelector('#run');
+    var walkBut = document.querySelector('#walk');
+    var idleBut = document.querySelector('#idle');  
+    var scene = document.querySelector('a-scene');
+    
+   
+  
+  this.el.addEventListener('click', () => {
+        
+      if (this.el != jumpBut){  
+        dino.setAttribute("animation-mixer",this.data); 
+         scene.removeEventListener('animation-loop', jumpTrans);
+         prevData = this.data;
+         
+     }
+        
+     if (this.el == jumpBut) {
+        
+        dino.setAttribute("animation-mixer",this.data); 
+        var jumpTrans = function () {scene.removeEventListener('animation-loop',jumpTrans); dino.setAttribute("animation-mixer",prevData);console.log("scene ="+scene); console.log("fire")};  
+        console.log("prev data from jump button = "+prevData); 
+       setTimeout (function(){scene.addEventListener('animation-loop',jumpTrans);},500);     
+     
+     }
+        
+     
+    }); 
+      
+      
+      
+  }
+});
+</script>  
+</body>
+</html>
