@@ -1,0 +1,614 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>VIRTUAL AND AUGMENTED REALITY (CMP3754M): Behaviour, Accessibility and Mixed Reality</title>
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/night.css">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+<link rel="stylesheet" href="css/custom.css">
+
+<!-- Printing and PDF exports --> 
+<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section data-background-transition="convex" data-background="#333333">
+      <h2 >Hello</h2>
+      <p style="color:#F8AA00">VIRTUAL AND AUGMENTED REALITY (CGP 3754M)</p>
+        <p>Code: 916599</p>
+    </section>
+    <section data-state="intro" data-background="assets/mr/front.jpg">
+      <h3><span class="dark-back">Behaviour, Accessibility and Mixed Reality</span></h3>
+    </section>
+    <section data-menu-title="next few weeks" data-background-transition="convex" style="text-align: left;" >
+      <h4>Schedule</h4>
+      <p class="small bullet">Week 8: INTRO AUGMENTED REALITY</p>
+      <p class="small bullet red">Week 9:Designing for AR / UX / INTERACTION DESIGN</p>
+      <p class="small bullet"><strong>Week 10:AR Behaviours and Mixed Reality</strong></p>
+     <p class="small bullet">Week 11:Invisible Worlds Case Study</p>
+      <p class="small bullet">Week 12:19/12/2022 XMAS HOL</p>
+    <p class="small bullet">Week 13:26/12/2022 XMAS HOL</p>
+      <p class="small bullet">Week 14:02/01/2022 XMAS HOL</p>
+    <p class="small bullet">Week 15: Vestigiascope Case Study</p>
+    <p class="small bullet">Week 16: VR Presence racap- Extension Support</p>
+    </section>
+      
+       <section data-background-transition="convex" data-background-video="assets/iw.mp4" data-background-size="contain"><p class="fragment">Next week</p> </section>
+            
+ <section data-background-transition="convex" data-background-video="assets/ar/fifa.mp4" data-background-size="contain">
+      <h3>AR APP of the week</h3>
+     <p class="small">Ross Elliman</p>
+    </section>
+      
+       <section data-background-transition="convex" data-background-video="assets/ar/elfstudio.mp4" data-background-size="contain">
+
+    </section>
+    <section data-menu-title="today" data-background-transition="convex" style="" >
+      <p>To day we will look at.<br>
+      </p>
+         <p class="fragment bullet ">Observations</p>
+      <p class="fragment  bullet tight">Assessment</p>
+      <p class="fragment  bullet tight">AR on Behaviours</p>
+      <p class="fragment  bullet tight">AR and Accessibility</p>
+      <p class="fragment  bullet tight">Mixed Reality Overview (HMD)</p>
+      <p class="fragment  bullet tight">Players</p>
+      <p class="fragment  bullet tight">Hardware</p>
+      <p class="fragment  bullet tight">limitations</p>
+      <p class="fragment  bullet tight">Considerations</p>
+      <p class="fragment  bullet tight">Interactions</p>
+      <p class="fragment bullet tight">Loose links with Immersion</p>
+      <p class="fragment bullet tight">Applications</p>
+    </section>
+      <section>
+      <h3>Need an android phone?</h3>
+          <h3><a href="">https://forms.office.com/e/12PzZdSjwB</a></h3>
+      </section>
+      
+      
+          <section data-background-transition="convex" data-background="assets/eye.gif" data-background-size="400px" >
+      <h3>Observations</h3>
+        
+    </section>
+      
+        <section data-background-transition="convex" data-background="assets/tap.gif" data-background-size="cover" >
+        <p><span class="dark-back"><strong>Debugging AR</strong></span></p>
+        <p class="fragment"><span class="dark-back">"Nothings Fucking Happening!" - unnamed student"</span></p>
+    </section>
+      
+                    <section data-background-transition="convex"  >
+                  <p><a href="https://kyrylokuzyk.itch.io/ar-foundation-remote">70% Student discount $24.00</a></p>
+            <p> <a href="https://www.youtube.com/watch?v=wCcvP-2FZ-I&ab_channel=DilmerValecillos">AR FOUNDATION 5 DEBUGGING Dilmer Valecillos</a></p>
+           <p>  <a href="https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@5.0/manual/debug-ar-scenes.html">AR Foundation Debug menu (AF 5)</a></p>
+    </section>
+      
+             <section data-background-transition="convex" data-background="assets/ar/debug.png" >
+<p>Use the logger script from week 1!</p>
+ <pre><code data-trim data-noescape>
+//string
+Logger.Instance.LogInfo("string you want");
+                     
+//object or soemthing
+Logger.Instance.LogInfo (pose.position);
+   </code></pre>
+    </section>
+      <section>
+    <pre><code data-trim data-noescape data-line-numbers="11|15|23|26" style="font-size: 70%; line-height: normal; background: transparent;" >
+void Update()
+    {
+        if (Input.touchCount > 0)
+        {
+        
+            var touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Ended)
+            {
+                if (Input.touchCount == 1)
+                {
+                Logger.Instance.LogInfo("we have a touch count "+ Input.touchCount);
+                    //Rraycast Planes
+                    if (arRaycastManager.Raycast(touch.position, arRaycastHits))
+                    {
+                         Logger.Instance.LogInfo("we have a touch count "+ Input.touchCount);
+                        var pose = arRaycastHits[0].pose;
+                        CreateKnight(pose.position);
+                        return;
+                    }
+
+                    Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                    if (Physics.Raycast(ray, out RaycastHit hit))
+                    {
+                    Logger.Instance.LogInfo("we have a hit "+ hit.collider.tag);
+                        if (hit.collider.tag == "knight")
+                        {
+                        Logger.Instance.LogInfo("has knight tag so delete");
+                            DeleteKnight(hit.collider.gameObject);
+                        }
+                    }
+                }
+            }
+        }
+    }
+ </code></pre>
+      
+      </section>
+      
+      <section>
+      <p>ARM64 is an evolution of the original ARM architecture that supports 64-bit processing for more powerful computing, and it's quickly becoming the standard in newer devices</p></section>
+      <section data-background="assets/arm64.png" >
+      </section>
+        <section data-background="assets/arcore.png" >
+      </section>
+      
+      
+
+      
+    <section>
+      <h3>Assessment</h3>
+    </section>
+    <section>
+      <h3>AR assessment</h3>
+      <p class="bullet fragment">1. Combine virtual and real information, with the real world as the primary place of action;</p>
+      <p class="bullet fragment">2. Be interactive with real-time updates to content <strong>OR</strong> object (GUI);</p>
+      <p class="bullet fragment">3. Have virtual information registered in 3D space, in the physical environment.</p>
+      <p class="bullet fragment">4. A Report.</p>
+    </section>
+      
+    <section>
+         <h3>The Report</h3>
+      <p class="bullet fragment">A: Development [Max. 750 words]. Discuss your development including any technical
+implementation(s) for example handling Interruptions or using audio and haptics to
+enhance the immersive experience. This should include a rationale behind your
+choice of implementation and the intended user experience.</p>
+      <p class="bullet fragment">B. Analysis and evaluation [Max. 1000 words]. This could include a discussion on
+environment, interactions and patterns, cognitive tunneling, diegetic/ non diegetic
+interfaces and/or other aspects that you think are relevant. You should also discuss
+any negative aspects.</p>
+    </section>
+      
+                      <section data-background-transition="convex"  >
+        <p><span class="dark-back"><strong>Keep your idea simple - Be Realistic</strong></span></p>
+        <p><span class="dark-back"> This is only half a module with 5/6 weeks development and thus we expect that to reflect in the actual development - These are going to be Mid Fi prototypes.</span> </p>
+    </section>
+      
+      
+    <section>
+      <p>“Presence is a psychological state or subjective perception in which even though part of all of an individual’s current experience is generated by and or filtered through human-made technology, part of all of the individual’s perception fails to accurately acknowledge the role of the technology in the experience”</p>
+      <p class="tiny"><a href="https://ispr.info/about-presence-2/about-presence/">— International Society for Presence Research, 2000</a></p>
+    </section>
+    <section>
+      <h3>Immersion vs. Presence</h3>
+      <p class="fragment tight bullet" style=""><strong>Immersion:</strong> describes the extent to which technology is capable of delivering a vivid illusion of reality to the senses of a human participant.</p>
+      <p class="fragment tight bullet" style=""><strong>Presence:</strong> a state of consciousness, the (psychological) sense of being in the virtual environment.</p>
+      <p class="fragment tight" style="">So Immersion, defined in technical terms, is capable of producing a <strong>sensation of Presence</strong></p>
+      <p class="fragment tiny">Slater, M., & Wilbur, S. (1997). A framework for immersive virtual environments (FIVE):Speculations on the role of presence in virtual environments. Presence: Teleoperators and virtual environments, 6(6), 603-616.</p>
+    </section>
+    <section data-background="assets/presence3.jpg">
+      <p><span class="dark-back">You need identify potential ways to <strong>improve immersion</strong> in the user experience (thus <strong>strengthen</strong> the sense or <strong>presence</strong>)</span></p>
+    </section>
+    <section>
+      <h3>The Components of Presence (which can be applied in AR)</h3>
+      <p class="small">Mel Slaters theory is Place Illusion & Plausibility Illusion</p>
+      <p class="fragment"> In “The VR Book: Human-Centered Design for Virtual Reality” by Jason Jeral suggest 4 components to Presence.</p>
+      <p class="fragment tight"><strong>1:The Illusion of Being in a Stable Spatial Place</strong></p>
+      <p class="fragment tight"> <strike>2:The Illusions of Self-embodiment</strike></p>
+      <p class="fragment tight"> <strong>3:The Illusion of Physical Interaction </strong></p>
+      <p class="fragment tight"> <strong>4:The Illusion of Social Communication</strong> </p>
+      <p class="fragment tight"><strong>All suggest these effect Presence (singular)</strong></p>
+    </section>
+    <section data-background="assets/wildcard.png" data-background-size="contain" data-background-color="#eeeeee">
+      <h3><span class="dark-back"> disclaimer *Wild Card</span></h3>
+    </section>
+    <section data-background="assets/elemental.png" data-background-size="cover" data-background-color="#eeeeee">
+      <h3><span class="dark-back">Elemental Theory</span></h3>
+      <p><span class="dark-back">Aki Järvinen</span></p>
+    </section>
+    <section data-background="assets/elemental2.jpg" data-background-size="cover" data-background-color="#eeeeee">
+      <p><span class="dark-back">Aki Järvinen suggests that there are a range of presences that we should design for and try to map them the ‘Elemental Theory of Presence’ - a useful model created by Kent Bye for describing the qualitative elements of a virtual reality experience.<br>
+        <br>
+        </span></p>
+      <p><span class="fragment dark-back"><strong>Different presences = different experiences</strong></span></p>
+    </section>
+      
+        <section data-background-transition="convex" data-background-video="https://assets.awwwards.com/awards/external/2016/11/iron-man-film-gestural-UI-holotable-augmented.mp4">
+     <h3 class=""><span class="dark-back">Behaviours</span></h3> 
+      </section>
+      
+      
+      
+      <section>
+      
+      <p><strong>SPACE:</strong> In a new study led by professor Jeremy Bailenson, using a traditional psychology method known as social inhibitions. Researchers found: </p>
+          
+          <p class="bullet fragment">that <strong>after</strong> people had an experience in augmented reality (HMD AR) - their interactions in their physical world changed as well, even with the AR device removed.</p>
+        <p class="bullet fragment">People avoided sitting on a chair they had just seen a virtual person sit on.</p> 
+        <p class="bullet fragment">Participants "appeared" to be influenced by the presence of a virtual person in a similar way they would be if a real person were next to them. </p>
+          <p class="small fragment">Their findings mirror much of the research Bailenson has done on virtual reality (VR)</p>
+          <p class="fragment fragment">Is this still true in Mobile?</p>
+
+      </section>
+      
+      
+      <section>
+          <p><strong>Road Safety:</strong> In "Effectiveness of augmented reality warnings on driving behaviour whilst approaching pedestrian crossings Researchers the Positive effects of AR were observed"</p>
+      <p class="bullet">When the AR warnings were activated, drivers started to decelerate well before the pedestrian crossing, with a low deceleration rate and high Time-to-Collision and Time-to-Crossing. This study confirmed the great benefits that AR and connected vehicle technologies could bring to the overall safety conditions on the road network</p>
+      </section>
+      
+            <section>
+
+          <p><strong>These results highlight how AR content integrates with your physical space, affecting the way you interact with it.</strong></p>
+      </section>
+      
+      <section>
+      <h3>Accessibility (Short MR version)</h3>
+         <p>Heavy headsets, hand tracking, and large hand-held controllers with stubborn buttons can pose immediate barriers for users with differing physical characteristics and abilities, underscoring the need for inclusivity.</p>
+          <p class="small"><a href="https://www.boia.org/blog/accessibility-considerations-for-augmented-and-virtual-reality-for-the-classroom-and-beyond">BOIA</a></p>
+      </section>
+      <section data-background-video="assets/access.mp4" data-background-size="contain"></section>
+      
+      <section>
+
+          <p class="small">In Making Mobile Augmented Reality Applications Accessible (Jaylin Herskovitz and Apple)demonstrates (with a series of 10 prototypes)that AR is possible to use for blind users and
+reveals a number of insights</p>
+           <p class="small"><a href="http://guoanhong.com/papers/ASSETS20-AccessibleAR.pdf">Making Mobile Augmented Reality Applications Accessible</a></p>
+          
+      </section>
+      
+      <section>
+     <p> When designing an application that uses augmented reality, Things Entertainment suggests these accessibility guidelines to keep users with physical disabilities in mind:</p>
+
+<p class="small bullet"><strong>Spatial or Positional Sound Effects:</strong> creating sounds that mimic the location of augmented objects allow users with mobility impairments to locate objects without requiring movement.</p>
+<p class="small bullet"><strong>Adjustable Location of Augmented Reality Objects:</strong> allowing users to move the augmented object that they are required to interact prevents users from requiring movement such as reaching, bending, or accessing areas that are restricted to wheelchair users.</p>
+          
+<p class="small bullet"><strong>Avoid Space Conflicts:</strong> allowing augmented objects to be unfixed forms increase options in the type of movement, the angle of movement and the direction of movement needed for interaction.</p>
+          <p class=""><a href="https://gettecla.com/blogs/news/augmented-reality-and-accessibility"></a></p>
+      </section>
+      
+    <section>
+      <h3>Mixed Reality</h3>
+    </section>
+    <section>Recap</section>
+    <section data-background="assets/presence2.jpg">
+      <p><span class="dark-back">Virtual reality (VR): "Is an artificial environment which is experienced through sensory stimuli (such as sights and sounds) provided by a computer and in which one's actions partially determine what happens in the environment”</span></p>
+    </section>
+    <section data-background="assets/ar/ar_front.jpg">
+      <p><span class="dark-back">Augmented Reality:(AR)Refers to a system in which the user views and acts within an enhanced version of the real world. The enhancements are virtual (computer generated), i.e. objects, information, face or body augmentation etc.</span></p>
+    </section>
+    <section data-background="assets/mr/holo2.jpg">
+      <p ><span class="dark-back">Mixed reality:(MR) Refers to a system that combines real and virtual objects and information. Virtual content is not only overlaid on the real environment (as in AR) but is anchored to, and interacts with that environment.(line are becoming blurred with gestures)</span></p>
+    </section>
+    <section>
+      <p>Put simply, in mixed reality you can see virtual objects just like you can in augmented reality, but these objects can also interact with the real world. Mixed Reality could be considered a more <strong>immersive</strong> and interactive type of augmented reality?</p>
+    </section>
+    <section data-state="intro" data-background="assets/mr/space.png" data-background-color="#595959">
+      <p class="small">Mixed reality spectrum<br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </p>
+    </section>
+    <section data-background="assets/mr/mixed1.jpg">
+      <p><span class="dark-back">Today’s focus is on <strong>HMD's</strong>. Currently there are two forms of Mixed reality (HMD's):</span></p>
+      <p class="fragment"><span class="dark-back">Immersive Devices</span></p>
+      <p class="fragment"><span class="dark-back">Holographic Devices<br>
+        </span></p>
+    </section>
+    <section data-background="assets/mr/imersivedevice.jpg">
+      <h3 class="">Immersive Devices</h3>
+      <p class="fragment"><span class="dark-back">These headsets have <strong>non-translucent</strong> displays that completely block out the real world (just like the quest headsets when setting guardian) and use cameras for tracking. Windows mixed reality headsets from Acer and HP work this way.</span></p>
+    </section>
+    <section data-background="assets/mr/transparent.jpg">
+      <h3 class=""><span class="dark-back">Holographic Devices</span></h3>
+      <p class="fragment tiny "><span class="dark-back"> (Not technically Holograms - A Hologram is a physical structure that uses light diffraction - blame MS)</span></p>
+      <p class="fragment"><span class="dark-back">These headsets have translucent glasses that allow you to perfectly see your surroundings. Virtual experiences are created with the help of holograms. That’s how Microsoft HoloLens 2 works.</span></p>
+      <p class="fragment"><span class="dark-back">This will be the main focus today</span></p>
+    </section>
+    <section data-state="intro" data-background="assets/mr/mrstats.png" data-background-color="#404040" data-background-size="800px"></section>
+    <section>
+      <h3>Investment</h3>
+      <p class="fragment">Microsoft is investing several billion dollars into Hololens development (already spent 150 million on licensing hardware from ODG). </p>
+      <p class="fragment">Google spent over $1 billion on the comparatively very simple Google Glass (not to mention 1.4 BILLION in Magic Leap).</p>
+      <p class="fragment">Closely related, Facebook spent $2b to acquire Oculus Rift </p>
+      <p class="fragment"><strong>BIG MONEY! BIGGER Development industry</strong> (More jobs for you)</p>
+    </section>
+    <section>
+      <h3>The Players</h3>
+    </section>
+    <section data-background="assets/mr/nxg.jpg">
+      <h3>Dimension NXG AjnaLens</h3>
+      <div class="half">
+        <p><span class="dark-back">FOV: 95°</span></p>
+        <p><span class="dark-back">Country: India</span></p>
+        <p><span class="dark-back">Incorporating AI, environmental mapping and enhanced 3D digital holograms</span></p>
+        <p><span class="dark-back">MR headset price: $1,500</span></p>
+      </div>
+    </section>
+    <section data-background="assets/mr/ml2.jpg">
+      <h3>Magic Leap One</h3>
+      <div class="half">
+        <p><span class="dark-back">FOV: 40°</span></p>
+        <p><span class="dark-back">Country: US</span></p>
+        <p><span class="dark-back">Uses <strong>Light Field Technology</strong> and comes with a wearable Lightpack (mini PC) to power the device</span></p>
+        <p><span class="dark-back">MR headset price: $2,295</span></p>
+      </div>
+    </section>
+    <section data-background-transition="convex" data-background-video="assets/mr/leap.mp4"> </section>
+    <section data-background="assets/mr/holo1.jpg">
+      <h3>Microsoft HoloLens (have 2)</h3>
+      <div class="half">
+        <p><span class="dark-back">FOV: 35°</span></p>
+        <p><span class="dark-back">Country: US</span></p>
+        <p><span class="dark-back">Uses <strong>waveguide</strong> technology. In circulation since 2016 and has already been integrated into several industries </span></p>
+        <p><span class="dark-back">MR headset price: $3,000M</span></p>
+      </div>
+    </section>
+    <section data-background="assets/mr/hololensimage.jpg">
+      <h3>Microsoft HoloLens 2</h3>
+      <div class="half">
+        <p><span class="dark-back">FOV: 52°</span></p>
+        <p><span class="dark-back">Country: US</span></p>
+        <p><span class="dark-back">Latest Kinect sensor, a custom AI chip to improve its performance, a wider FOV, and a more comfortable design</span></p>
+        <p><span class="dark-back">MR headset price: $3,500</span></p>
+      </div>
+    </section>
+    <section data-background-transition="convex" data-background-video="assets/mr/holostart.mp4"> </section>
+    <section data-background="assets/mr/nreal.png">
+      <h3>NREAL (Just got one)</h3>
+      <div class="half">
+        <p><span class="dark-back">FOV: 52°</span></p>
+        <p><span class="dark-back">Country: China</span></p>
+        <p><span class="dark-back">Work tethered to a mini PC (like the Magic Leap One). Light and simple, they almost look like “normal” sunglasses or eyeglasses</span></p>
+        <p><span class="dark-back">MR headset price: $599 (was $1000)</span></p>
+      </div>
+    </section>
+    <section data-background-transition="convex">
+      <video  height="600" controls>
+        <source src="assets/mr/nreal.mp4" type="video/mp4">
+      </video>
+    </section>
+      
+        
+      
+    <section data-background="assets/mr/bridge.jpg">
+      <h3>Occipital Bridge</h3>
+      <div class="half">
+        <p><span class="dark-back">FOV: 120°</span></p>
+        <p><span class="dark-back">Country: US</span></p>
+        <p><span class="dark-back">MR headset for smartphones. It offers 6 degrees of freedom (6DoF) with its inside-out tracking and, most importantly, boasts the largest FOV (120°)</span></p>
+        <p><span class="dark-back">MR headset price: $578 (with sensor)</span></p>
+      </div>
+    </section>
+      
+    <section data-background-transition="convex" data-background-video="assets/mr/bridge.mp4"> </section>
+      
+          <section data-background-transition="convex" data-background="assets/spectacles.png" data-background-size="cover">
+     <h3 class=""><span class="dark-back">Spectacles 3 (Snapchat - just ordered some)</span></h3> 
+                <div class="half">
+        <p><span class="dark-back">FOV: 26.3°</span></p>
+        <p><span class="dark-back">Country: America</span></p>
+        <p><span class="dark-back">untethered, 2000 Nits of brightness for inside and outside use</span></p>
+        <p><span class="dark-back">Smart glasses price: £330.00 (VUZIX BLADE ~ $1000)</span></p>
+      </div>
+      </section>
+     
+      
+        <section data-background-transition="convex" data-background-video="https://storage.googleapis.com/spectacles-v3/NzVlNzU3OWQtY2U2Ny00OGQ3LTljMGEtMGU4MmQ2ZDY0NDcx/home/home-creators_1_optimized.mp4">
+      </section>
+      
+    <section>
+      <h3>The Tech</h3>
+      <p>Different hardware has different limitations - all these effect the immersive experience</p>
+    </section>
+    <section>
+      <h3>Managing Expectations</h3>
+      <p>People are now coming to expect the high image quality they get from 4K TVs with high dynamic range and by the fanciful visions that Hollywood comes up with for AR that can only be done in post-production CGI</p>
+      <p class="fragment">The hardware does not allow it (yet)</p>
+    </section>
+    <section data-state="intro" data-background="assets/mr/WAVELENGTHTECH.jpg" data-background-color="#fff" data-background-size="500px">
+      <p class="small"><span class="dark-back">Waveguide optical architect (Hololens- maybe magic leap)<br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        </span></p>
+    </section>
+    <section>
+      <p class="tight bullet">The waveguide combiner, a flat and relatively ergonomic one, exceeds conventional HMDs in all parameters except for the field of view. The waveguide architecture has a very limited angular bandwidth, which results in a narrow FOV.(between 30° and 52° in a diagonal direction)</p>
+      <p class="fragment tight bullet">System resolution (MTF of the whole system) is typically quite low due to diffraction optical limitations.</p>
+      <p class="tight bullet fragment">Its expensive!</p>
+    </section>
+    <section data-state="intro" data-background="assets/mr/birdbath.jpg" data-background-color="#fff" data-background-size="600px">
+      <p class="small"><span class="dark-back">BirdBath (ODG-just gone bust)</span><br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </p>
+    </section>
+    <section>
+      <p>Birdbath has a very long and rich history, while it has its pros, it comes with the following limitations:</p>
+      <p class="fragment tight bullet">It has a fundamental privacy leaking issue, as others can see the display content from outside, from all directions.</p>
+      <p class="fragment tight bullet">FOV is quite similar to waveguide technology, not large enough (between 40° and 55° in a diagonal direction)</p>
+      <p class="fragment tight bullet">Hot and heavy on the nose - so only good for short periods</p>
+    </section>
+    <section data-state="intro" data-background="assets/mr/odgleak.jpg" data-background-color="#fff" data-background-size="cover">
+      <p class="tiny fragment"><span class="dark-back" >Not good for watching porn!</span></p>
+    </section>
+    <section data-state="intro" data-background="assets/mr/helmet.jpg" data-background-color="#404040" data-background-size="cover">
+      <p><span class="dark-back">Off-axis Reflector optical architect (expensive)</span></p>
+    </section>
+    <section>
+      <p class="tight bullet">Off-axis Reflector optical architect. Historically, Off-axis Reflector was used in the Military thanks to its ultra-wide field of view (FOV) characteristics.</p>
+      <p class="fragment tight bullet">Used in pilot training program during World War 2, and was used on the F35 joint fighter information helmet, where the size and cost was not a big problem for the pilot.</p>
+      <p class="fragment tight bullet">the F35 joint fighter AR helmet was over 3 lbs, and cost about <strong>$400,000</strong> each. To make it work, each pilot’s head needs to be individually scanned! (No problem as an air-force device)</p>
+    </section>
+    <section>
+      <p>All the technologies are still very expensive commercially <br>
+        based on <strong>FOV</strong></p>
+        <a href="https://www.linkedin.com/pulse/what-most-promising-armr-optical-see-through-display-core-yuan/">What is the future of AR/MR display core tech</a>
+        <a href="https://kguttag.com/2019/10/21/fov-ar-and-the-view-of-the-real-world/">AR FOV (Karl Guttag)</a>
+    </section>
+    <section data-state="intro" data-background="assets/mr/fov2.png" data-background-color="#333333" data-background-size="800px"> </section>
+    <section data-state="intro" data-background="assets/mr/fov.png" data-background-color="#333333" data-background-size="800px"> </section>
+    <section data-state="intro" data-background="assets/mr/AROverall.png" data-background-color="#333333" data-background-size="800px"></section>
+
+      
+    <section data-state="intro" data-background="assets/mr/lightfield.gif" data-background-color="#404040" data-background-size="cover">
+      <p><span class="dark-back">Light Field Technology (maybe magic leap 2)</span></p>
+      <p class="fragment"><span class="dark-back">A light field volume creates images taken from every viewable position within a defined space. When your head moves, the correct images are swapped in real time.</span> (the volumetric information of a scene)</p>
+      <p class="fragment"><span class="dark-back">Light fields allow the highest fidelity of models, textures, lighting, and reflections which would not be possible in real time.</span></p>
+    </section>
+    <section data-state="intro" data-background="assets/mr/paralax.gif"  data-background-color="#404040" data-background-size="cover">
+      <p class=""><span class="dark-back bullet">Light field captures have parallax, an overlap of object depth based on head movement. This increases <strong>immersion and presence</strong>, and is’t available in 360 videos.</span></p>
+      <p class="fragment"><span class="dark-back bullet">You can mix light fields with 3D models, film, or photogrammetry to increase the illusion of reality.</span></p>
+    </section>
+      
+      <section>
+      <p>As there are several ways to capture light field imaging, industry professionals have not quite agreed on which light field capturing technique is the best yet!</p>
+          <a href="https://www.techbriefs.com/component/content/article/tb/supplements/pit/features/technology-leaders/38622">Find out more</a>
+          <a href="https://www.youtube.com/watch?v=c8Ge08MwSLQ&ab_channel=Stanford">Stanford Computational Imaging Group talk (2016!!)</a>
+      </section>
+      
+    <section>
+      <h3>MR *may have better accommodation (focusing distance).</h3>
+      <p class="tiny">(Patrick has discussed focus in VR)</p>
+      <p class="bullet">Light beam will always stay in focus if we don’t have multiple focal planes (at least five).</p>
+      <p class="bullet fragment">This will result in eye fatigue and generally will impact immersion. </p>
+      <p class="bullet fragment">Avegant, has recently introduced the Glyph Light Field headset. -claims that they use the light field approach to make multiple digital focus planes.</p>
+    </section>
+    <section data-background-transition="convex" data-background-video="assets/mr/lightfield.mp4"> </section>
+    <section>
+      <h3>NO MORES LAW ON OPTICS</h3>
+      <p class="small">Everyone, it seems, starts with Ray-Ban® sunglasses as their starting point. As they try and solve one technical problem after another, the headset grows until it becomes a small helmet, ala Hololens (1 and 2). <br>
+        <br>
+        Even if they use something that looks thin like waveguides, the waveguides have to be protected as they are very fragile. Adding SLAM means having to put cameras that are spread out and have to be mounted somewhere, which makes the headset bigger. <br>
+        <br>
+        Supporting transparency while being bright enough to see the image, requires a bright projector, which in turn means battery power and heat management.</p>
+      <p class="tiny">Karl Guttag (https://www.kguttag.com/)</p>
+    </section>
+    <section>
+      <h3>Challenges in MR</h3>
+      <p class="fragment  bullet small">Occlusion and depth perception</p>
+      <p class="fragment  bullet small">Text display and legibility</p>
+      <p class="fragment  bullet small">Visual differences between real and virtual objects</p>
+      <p class="fragment  bullet small">Registration and tracking</p>
+      <p class="fragment  bullet small">Bulky HMDs and other equipment</p>
+      <p></p>
+    </section>
+    <section data-background="assets/mr/HoloLens2Release.gif">
+      <h3>MR Features/responses</h3>
+      <p>(some Hololens specific)</p>
+    </section>
+    <section data-background-transition="convex" data-background="assets/mr/mapping.jpg">
+      <h3>Spatial mapping</h3>
+      <p>The current state of technology allows us to create an environment mesh almost instantaneously as the depth sensing camera captures the environment. But this can have limitations.</p>
+    </section>
+    <section>
+      <p>You first have to really explore your area to let the device map your playground. If you’re using HoloLens, you’d have to make sure that you approach and look at all objects within 3.1 meters in front of you. If you don’t, the camera won’t capture all details that you want to interact with</p>
+      <p>Busy areas with people can create "ghosting" when mapping.</p>
+    </section>
+    <section data-background-transition="convex" data-background-video="assets/mr/mapping.mp4"> </section>
+    <section data-background-transition="convex" data-background="assets/mr/mapping.jpg">
+      <h3>Eye tracking</h3>
+      <p><strong>User intent: </strong>Information about where and what a user looks at provides a powerful context for other inputs, such as voice, hands and controllers.</p>
+      <p><strong>Implicit actions:</strong>"eye-gaze-based" auto scroll where the user can read a long text which automatically starts scrolling once the user gets to the bottom of the text-box</p>
+      <p>"eye-supported zoom and pan". The user can feel like diving exactly toward what they are focused on.</p>
+    </section>
+    <section>
+      <h3>spatial coordinate systems</h3>
+    </section>
+    <section>
+      <h3>Shared environments</h3>
+    </section>
+    <section>
+      <h3>Application areas</h3>
+      <p>Communications</p>
+      <p>Education</p>
+      <p>Medical</p>
+      <p>Gaming (expensive)</p>
+      <p>Manufacturing</p>
+    </section>
+    <section>
+      <p> Corporate adoption soon. Designers, construction workers, and surgeons can already benefit from AR headsets. And they won’t ask for “immersive experiences,” just some necessary and practical basics.</p>
+    </section>
+    <section>
+      <h3>Check out hololens 2 full expo (little old now)</h3>
+    </section>
+    <section>
+      <iframe width="100%" height="900" src="https://www.youtube.com/embed/k5SMABo4jwM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+
+     <section>
+         <h3>Module Evaluation</h3>
+         <p>If you could enter the module code as either "CMP3754MGamesComputing" or "CMP3754MComputerScience", that would be helpful for us in differentiating between students from the two programme</p>
+   <p><a href="https://unilincolnlalt.qualtrics.com/jfe/form/SV_5sPWHQBaMmZI8Ci">Evaluation Form</a></p>
+    </section>
+    <section>
+      <h2>Boom!</h2>
+    </section>
+  </div>
+</div>
+<script src="lib/js/head.min.js"></script> 
+<script src="js/reveal.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="https://code.highcharts.com/highcharts.js"></script> 
+<script src="https://code.highcharts.com/highcharts-more.js"></script> 
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script> 
+<script src="js/themes/mypbtheme.js"></script> 
+<script src="js/jquery.animateNumber.min.js"></script> 
+<script src="js/main.js"></script> 
+
+</body>
+</html>
