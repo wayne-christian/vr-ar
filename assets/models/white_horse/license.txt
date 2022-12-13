@@ -1,0 +1,11 @@
+Model Information:
+* title:	White Horse
+* source:	https://sketchfab.com/3d-models/white-horse-fbdc9eeed40549829d7ccd25054a1171
+* author:	BlueMesh (https://sketchfab.com/VapTor)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "White Horse" (https://sketchfab.com/3d-models/white-horse-fbdc9eeed40549829d7ccd25054a1171) by BlueMesh (https://sketchfab.com/VapTor) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
