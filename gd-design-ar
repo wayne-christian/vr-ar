@@ -1,0 +1,526 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>VIRTUAL AND AUGMENTED REALITY (CMP3754):Augmented Reality</title>
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/night.css">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+<link rel="stylesheet" href="css/custom.css">
+
+<!-- Printing and PDF exports --> 
+<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section data-background-transition="convex" data-background="#333333">
+      <h2 >Hello</h2>
+      <p style="color:#F8AA00">VIRTUAL AND AUGMENTED REALITY</p>
+        
+    </section>
+    <section data-background-transition="convex" data-background-video="https://wayne-christian.github.io/WEB-AUTH-PRESENTATIONS/assets/week1assets/rainingcode.mp4" data-background-video-loop="loop">
+      <h3 >Wayne Christian</h3>
+      <p style="color:#F8AA00">Designer, Developer, Director & Senior Lecturer</p>
+    </section>
+   
+
+
+    <section data-background="assets/brain.jpg" data-background-size="cover" data-background-color="#ff000">
+      <h2>
+        <ul class="dark">
+          <li class="fragment fade-up"><span class="dark-back">Ideation</span></li>
+          <li class="fragment fade-up"><span class="dark-back">Research</span></li>
+          <li class="fragment fade-up"><span class="dark-back">Experimentation</span></li>
+          <li class="fragment fade-up"><span class="dark-back">Development</span> </li>
+          <li class="fragment fade-up"><span class="dark-back">Refinement</span></li>
+          <li class="fragment fade-up"><span class="dark-back" style="color: red">Evaluation</span></li>
+        </ul>
+      </h2>
+    </section>
+    <section data-state="intro" data-background="assets/ar/ar_front.jpg">
+      <h3><span class="dark-back">Augmented Reality</span></h3>
+    </section>
+        
+    <section data-background="#222222">
+      <iframe src="https://embed.polleverywhere.com/multiple_choice_polls/qVaIvG4c7eaC1TcdKnOQD?controls=none&short_poll=true" width="1200" height="800" frameBorder="0"></iframe>
+    </section>
+      
+
+    <section data-menu-title="today" data-background-transition="convex" style="" >
+      <p>To day we will look at.<br>
+      </p>
+      <p class="fragment  bullet">Brief AR history</p>
+      <p class="fragment  bullet">Market</p>
+      <p class="fragment  bullet">AR types and examples</p>
+      <p class="fragment  bullet">Cool examples</p> 
+      <p class="fragment bullet">Designing for AR</p>
+    </section>
+    <section>
+      <p>Augmented reality (AR) is defined as “a live direct or an indirect view of a physical, real-world environment whose elements are augmented by computer-generated sensory input, such as sound, graphics or GPS data.”</p>
+      <p class="tiny">Augmented Reality – Implications toward Virtual Reality, Human Perception and Performance, 2019</p>
+    </section>
+    <section>
+      <p>More commonly..</p>
+      <p>An enhanced version of reality created by the use of technology to overlay digital information on an image of something being viewed through a device (such as a smart-phone camera or HMD (There are others)</p>
+    </section>
+    <section data-background-video="assets/ar/ar_vid8.mp4"></section>
+         <section data-menu-title="ar world" data-background-transition="convex" data-background-video="assets/ar1.mp4" > <p class="tiny"><span class="dark-back">Hyper-Reality - Keiichi Matsuda</span></p></section>
+    <section>
+      <h3>History</h3>
+      <p>AR origins AR similar to VR</p>
+      <p></p>
+    </section>
+    <section>
+      <p><strong>The Master Key</strong> written in 1901. In the novel, Frank Baum described a device that can mark people with letters and show their character in real time.</p>
+    </section>
+    <section> <img src="assets/ar/firstar.jpeg"/>
+      <p>The first VR-AR helmet  in history was developed by a Harvard Professor Ivan Sutherland and his student Bob Sproull in 1968. It was called <strong>“The Sword of Damocles.”</strong> (Patricks slides week 1)</p>
+    </section>
+    <section> <img src="assets/ar/arhistory2.jpg"/>
+      <p><strong>1980:</strong> EyeTap, the first portable AR device</p>
+    </section>
+    <section> <img src="assets/ar/arhistory3.gif"/>
+      <p><strong>1999:</strong> Hirokazu Kato from the Nara Institute of Science and Technology released a unique piece of software called the ARToolKit..</p>
+    </section>
+    <section>
+      <h2>2008</h2>
+      <p>What happened that made AR accessible</p>
+      <h3 class="fragment">Smart Phones</h3>
+    </section>
+    <section>
+      <p>The rise of hand-held AR is the tipping point for the technology being truly pervasive.</p>
+    </section>
+    <section>
+      <h2>2021 (Now)</h2>
+    </section>
+    <section data-background="assets/ar/Mobile-AR-Stats.jpg" data-background-size="800px" data-background-color="#2e2f2e"></section>
+    <section data-background="assets/ar/Mobile-AR-Stats2.jpg" data-background-size="700px" data-background-color="#383838"></section>
+       <section data-background="assets/Mobile-AR-Stats3.jpg" data-background-size="600px" data-background-color="#353535"></section>
+    <section>
+      <h3>Augmented Reality vs Virtual Reality</h3>
+      <p>Unlike virtual reality, which requires you to inhabit an entirely virtual environment, augmented reality uses your existing natural environment and simply overlays virtual information on top of it. </p>
+      <p class="fragment">As both virtual and real worlds harmoniously coexist, users of augmented reality experience an improved natural world where virtual information is used as a tool to provide assistance in everyday activities.</p>
+    </section>
+    <section>
+      <p>Simply</p>
+      <h3>VR creates environments and AR alters environments</h3>
+    </section>
+    <section data-background="assets/ar/types_diagram.jpg" data-background-size="800px" data-background-color="#383838"> </section>
+    <section data-background="assets/ar/types_diagram2.jpg" data-background-size="800px" data-background-color="#383838"> </section>
+    <section>
+      <p>AR is rapidly growing in popularity because it brings elements of the virtual world, into our real world, thus enhancing the things we see, hear, and feel. When compared to other reality technologies, augmented reality lies in the middle of the mixed reality spectrum; between the real world and the virtual world </p>
+    </section>
+    <section>
+      <h3>"<strong>70%</strong> OF SNAPCHAT’S <strong>186 MILLION DAILY</strong> USERS ACTIVATE AR LENSES DAILY"</h3>
+    </section>
+    <section data-menu-title="today" data-background-transition="convex" style="" >
+      <p>Types of AR<br>
+        <span class="small"> There are overlaps but are some more immersive than others?</span></p>
+      <p class="fragment  bullet">Marker (better now with multiple markers)</p>
+      <p class="fragment  bullet">Marker less (SLAM, Geolocation)</p>
+      <p class="fragment  bullet">SLAM (Occlusion)</p>
+      <p class="fragment  bullet">Facial & body analysis</p>
+      <p class="fragment  bullet">Social</p>
+      <p class="fragment bullet">Superimposition</p>
+      <p class="fragment  bullet">Projection (not on a device!)</p>
+    </section>
+    <section data-background="assets/od.png" data-background-size="contain" data-background-color="#fff">
+      <h3 style="color: black" >Visual-inertial Odometry</h3>
+      <p class="fragment"> <span class="dark-back" >To create a correspondence between real and virtual spaces, AR SDK’s uses a technique called visual-inertial odometry. This process combines information from the device’s motion sensing hardware with computer vision analysis of the scene visible to the device’s camera</span></p>
+    </section>
+    <section>
+      <h3>Marker Based Augmented Reality</h3>
+      <p class="small">(also called Image Recognition) </p>
+      <p class="bullet fragment  ">Uses a camera and some type of visual marker, such as a QR/2D code-a 3d object is different</p>
+      <p class="bullet fragment  ">Camera on the device distinguishes a marker from any other real world object. </p>
+      <p class="bullet fragment  ">Distinct, but simple patterns (such as a QR code) are easily recognized and do not require a lot of processing power to read. </p>
+      <p class="bullet fragment  ">The position and orientation is also calculated, in which some type of content and/or information is then overlaid the marker.</p>
+    </section>
+    <section  data-background-size ="contain" data-background-video-loop="loop" data-background-video="assets/test.mp4"> </section>
+    <section data-background-video="assets/ar/machine.mp4">  <p><span class="dark-back">Marker</span></p></section>
+
+    <section data-background-video="assets/ar/disney.mp4">
+      <p><span class="dark-back">Marker</span></p>
+    </section>
+    <section data-background-video="assets/ar/ar_vid16.mp4"></section>
+    <section data-background-video="assets/ar/ar_vid7.mp4"></section>
+    <section>
+      <h3>Markerless Augmented Reality</h3>
+      <p class="bullet ">One of the most widely implemented applications of augmented reality</p>
+      <p class="bullet fragment  ">Also called location-based, position-based, or GPS) </p>
+      <p class="bullet fragment  ">uses a GPS, digital compass, velocity meter, or accelerometer which is embedded in the device to provide data based on your location. </p>
+      <p class="bullet fragment  ">leverage’s the wide availability of smart-phones and location detection features they provide. </p>
+      <p class="bullet fragment  ">It is most commonly used for mapping directions, finding nearby businesses, and other location-centric mobile applications.</p>
+    </section>
+    <section data-background-video="assets/ar/ar_vid9.mp4">
+      <h3>Markerless Augmented Reality</h3>
+    </section>
+    <section data-background-video="assets/ar/ar_vid17.mp4"></section>
+    <section data-background-video="assets/ar/ar_vid13.mp4"></section>
+    <section data-background-video="assets/end.mp4"></section>
+    <section>
+      <h3>SLAM (simultaneous localization and mapping)</h3>
+      <p>SLAM is a technology that recognizes surfaces and allows us to place AR content without the need to scan an image.(fairly old) </p>
+    </section>
+    <section data-background-video="assets/ar/ar_vid4.mp4"></section>
+    <section data-background-video="assets/ar/ar_vid2.mp4"></section>
+    <section>
+      <h3>SLAM & Occlusion</h3>
+      <p class="bullet">The release of Apple’s AR Kit 3 now provides the ability to improve the realism of SLAM based AR scenes using object occlusion.</p>
+      <p class="bullet fragment">We now have the ability to make 3D content intelligently pass in front and behind real world objects and people to create truly immersive content.</p>
+      <p class="small fragment ">Great For: Entertainment, Large Scale Product Visualisations</p>
+    </section>
+    <section data-background-video="assets/ar/occlusion.mp4"> </section>
+    <section data-background-video="assets/ar/ar_vid11.mp4"> </section>
+    <section>
+      <h3>Facial Analysis</h3>
+      <p class="bullet">TrueDepth technology present on the latest iOS devices can now..</p>
+      <p class="bullet fragment  ">Analyse facial features</p>
+      <p class="bullet fragment  ">Accurately capture a range of 3D information. </p>
+      <p class="bullet fragment  ">Useful tool for retailers dealing in head and eye wear.</p>
+      <p class="bullet fragment  ">Opportunity to visualise products in AR</p>
+      <p class="bullet fragment  ">Get personalised recommendations of sizing and styles that will best suit their needs.</p>
+      <p class="small fragment  ">Great For: Wearables, Product Visualisation</p>
+    </section>
+    <section data-background-video="assets/ar/ar_vid19.mp4"></section>
+    <section>
+      <h3>Social AR (Filters)</h3>
+      <p class="bullet">FaceBook’s new development platform, Spark AR, we can create a range of AR filters, interactive adverts and mini experiences ready for use on FaceBook and Instagram.</p>
+      <p class="bullet fragment  ">Social AR is a great tool to integrate into marketing campaigns </p>
+      <p class="bullet fragment  ">strong entertainment value and ‘share-ability’. </p>
+      <p class="bullet fragment  ">It can be integrated straight into existing social media timelines, ensuring the content gets a wide exposure.</p>
+      <p class="small fragment  ">Great For: Entertainment, Marketing</p>
+    </section>
+    <section data-background-video="assets/ar/dior.mp4"></section>
+    <section>
+      <h3>Body Tracking</h3>
+      <p class="bullet">Body tracking allows us to overlay digital content and effects over user’s hands and body movements.</p>
+      <p class="bullet fragment  ">Gives the user the ability to manipulate and interact with what they see.</p>
+      <p class="bullet fragment  ">Allows us to be much more creative in the ways we ask audiences to interact with AR experiences.</p>
+      <p class="small fragment  ">Great For: Entertainment, Apps encouraging physical activity.</p>
+    </section>
+    <section data-background-video="assets/ar/ar_vid21.mp4" data-background-size ="contain"></section>
+    <section data-background-video="assets/ar/ar_vid22.mp4" data-background-size ="contain"></section>
+    <section data-background-video="assets/ar/ar_vid23.mp4"></section>
+    <section data-background-video="assets/ar/ar_vid10.mp4"></section>
+    <section data-background-video="assets/ar/ar_vid20.mp4"></section>
+    <section>
+      <p>Military</p>
+    </section>
+    <section data-background-video="assets/ar/ar_vid15.mp4"></section>
+    
+    <!--	  <section>
+Projection Based Augmented Reality
+Projection Based Augmented RealityProjection based augmented reality works by projecting artificial light onto real world surfaces. Projection based augmented reality applications allow for human interaction by sending light onto a real world surface and then sensing the human interaction (i.e. touch) of that projected light. Detecting the user’s interaction is done by differentiating between an expected (or known) projection and the altered projection (caused by the user’s interaction). Another interesting application of projection based augmented reality utilizes laser plasma technology to project a three-dimensional (3D) interactive holograminto mid-air.
+</section>-->
+    <section>
+      <h3>Superimposition Based Augmented Reality</h3>
+      <p class="bullet">Partially or fully replaces the original view of an object with a newly augmented view of that same object. </p>
+      <p class="bullet">Object recognition plays a vital role because the application cannot replace the original view with an augmented one if it cannot determine what the object is.</p>
+    </section>
+    <section data-background-video="assets/ar/ikea.mp4"></section>
+    <section data-background-video="assets/ar/3dobj.mp4"></section>
+    <section>
+      <h3>Other Examples</h3>
+    </section>
+    <section data-background-video="assets/ar/pepsi.mp4"></section>
+    <section data-background-video="assets/ar/ar_vid3.mp4"></section>
+    <section data-background-video="assets/ar/ar_vid4.mp4">
+      <p>volumetric filming</p>
+    </section>
+    <section data-background-video="assets/ar/ar_vid5.mp4"></section>
+    <section data-background-video="assets/ar/ar_vid6.mp4"></section>
+    <section>
+      <h3>AR Ecosystem</h3>
+    </section>
+    <sect
+     
+          <section data-background-video="assets/heros.mp4"> </section>
+    <section>
+      <h3>Interesting Books</h3>
+      <div class="half"> <img src="assets/ar/book1.jpg"/>
+        <p class="tiny"><strong>Practical Augmented Reality</strong> by Steve Aukstakalnis.</p>
+      </div>
+      <div class="half"> <img src="assets/ar/book2.jpg"/>
+        <p class="tiny"><strong>Augmented Human: How Technology Is Shaping the New Reality</strong> by Helen Papagiannis. </p>
+      </div>
+    </section>
+      
+ <section data-background-size="cover" >
+      <h3>Disclaimer</h3>
+      <p>Like OS Material design, there are many good resources/guides on best practices for developing AR. I have collated a list of useful ones based on my experience. Google, Apple, Microsoft, Adobe etc (the developers of the toolkits) all have similar concepts on good practice</p>
+      <p class="small"> <a href="https://designguidelines.withgoogle.com/ar-design/">Augmented Reality Design Guidelines (Google)</a> <br>
+        <a href="https://designguidelines.withgoogle.com/ar-design/">Augmented Reality Design Guidelines (Apple)</a> <br>
+        <a href="https://docs.microsoft.com/en-us/windows/mixed-reality/design/about-this-design-guidance">Mixed Reality Design Guidelines (Microsoft)</a> </p>
+    </section>
+    <section data-background-size="cover" >
+      <h3>Research and Literature</h3>
+      <p>The following slides share some renown academics working in AR and a section of interesting papers, applicable to the AR part of the assignment</p>
+    </section>
+    <section>
+      <h3>Key academics/researchers in AR (If you fancy some bed time reading)</h3>
+      <p class="small">Order by number of papers-not necessarily large impact (that's your job)</p>
+      <p class="small">Billinghurst, M.<br>
+        Navab, N.<br>
+        Schmalstieg, D.<br>
+        Thomas, B.H.<br>
+        Wang, Y.<br>
+        Klinker, G.<br>
+        woo, w.<br>
+        Saito, H.S<br>
+        Liu, Y.<br>
+        Kato, H.<br>
+        Nee, A.Y.C.<br>
+        Ong, S.K.<br>
+        Feiner, S.<br>
+        Maclntyre, B<br>
+        Yokoya, N.</p>
+    </section>
+    <section>
+      <p>Loose Literature (all have links)</p>
+      <p class="small"> <a href="https://medium.com/@goatsandbacon/a-quick-guide-to-designing-for-augmented-reality-on-mobile-part-1-c8ecaaf303d5">A Quick Guide to Designing for Augmented Reality on Mobile</a> <br>
+        <a href=" https://www.youtube.com/c/xuenipan">Frontiers Seminar (VR and AR)</a> <br>
+        <a href=" https://www.youtube.com/watch?v=W1aAxRy46NE&t=24s&ab_channel=XueniPan">Frontiers Doug Bowman (AR Remote computing)</a><br>
+        <a href=" https://dl.acm.org/doi/pdf/10.1145/3357251.3358755?casa_token=9EnUcgWQA7MAAAAA:DLTITce0ejFHMoGLgAKeRagmAAhecDHlOJzVcATWnx5RhCuw4GnOCso1KdwX3SNjgJrGzcDVnItHnA">Adjustable Adaptation for Spatial Augmented Reality Workspaces (Doug Bowman)</a><br>
+        <a href="https://ieeexplore.ieee.org/iel5/4806856/4810973/04811058.pdf?casa_token=EtO_yGNl-o4AAAAA:yNn59NPjDWOumVp8EkOy5rDc4MsjbZdQznfrg9Uzlb_DDlXeEYU1h4so1cgHP6S-1hKNa96zZZwTBw">Simulation of Augmented Reality Systems in Purely Virtual Environments (Doug Bowman)</a><br>
+        <a href=" http://www.academia.edu/download/50974384/A_survey_of_evaluation_techniques_used_i20161219-7048-1lqut3k.pdf">A Survey of Evaluation Techniques Used in Augmented Reality Studies (Mark Billinghurst)</a><br>
+        <a href=" http://ir.canterbury.ac.nz/handle/10092/15494">A Survey of Augmented Reality (Mark Billinghurst)</a> <br>
+        <a href="http://web.cs.wpi.edu/~gogo/courses/imgd5100_2012f/papers/Hollerer_AR_2004.pdf">Mobile augmented reality Steve Feiner</a><br>
+        <a href=" https://www.mitpressjournals.org/doi/abs/10.1162/pres.1997.6.4.355">PRESENCE: Virtual and Augmented Reality (Ronald T. Azuma)</a> <br>
+        <a href="https://dl.acm.org/doi/abs/10.1145/502390.502403?casa_token=Nrubuyrqx_YAAAAA:OiTo9CMlIIVKT8Ln8vpazHdGRA76m1pHq2Qj2tp1f9e328IoFWTiFlectwOESqfci33azprbl2LkZw">A framework for rapid evaluation of prototypes with augmented reality (Pascal Fua)</a> </p>
+    </section>
+    <section data-menu-title="next few weeks" data-background-transition="convex" style="text-align: left;" >
+      <h4>Today</h4>
+      <p class="small bullet">Introduction</p>
+      <p class="small bullet">Design for Safety</p>
+      <p class="small bullet">Environmental Design</p>
+      <p class="small bullet">Interaction Design</p>
+      <p class="small bullet">Cues</p>
+      <p class="small bullet">Comfort</p>
+      <p class="small bullet">Content (Presence)</p>
+      <p class="small bullet">Cognitive Load / Cognitive Tunneling</p>
+      <p class="small bullet">Focus Switching</p>
+      <p class="small bullet">Conclusion</p>
+    </section>
+    <section>
+      <p>AR is one of the emerging technologies that have an opportunity to change the way we interact with digital products.</p>
+      <p class="fragment">The most important thing that you should remember about AR is that <strong>it’s just a technology</strong>. Users are seeking out experiences, not technologies, and they won’t like a technology that isn’t friendly to use.</p>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-video="https://assets.awwwards.com/awards/external/2016/11/hyper-reality-gestures-augmented-UI.mp4" data-background-video-loop="loop">
+      <h3 class="fragment"><span class="dark-back">THINK UX</span></h3>
+      <h3 class="fragment"><span class="dark-back">THINK UX</span></h3>
+      <h3 class="fragment"><span class="dark-back">THINK UX</span></h3>
+    </section>
+    <section data-menu-title="wayne"  data-background="assets/2020/des_ar8.gif" data-background-size="cover" data-background-color="#fff">
+      <h3><span class="dark-back">Design for Safety</span></h3>
+      <p><strong>Obviously!</strong></p>
+    </section>
+    <section>
+      <p>Users can get too immersed in an AR experience (see cognitive tunneling), so they ignore physical objects around them. </p>
+      <p class="fragment"> Prevent behaviors where users could bump into objects or people.</p>
+      <p class="fragment"> Build in reminders for users to check their surroundings</p>
+    </section>
+    <section data-menu-title="wayne"  data-background="assets/2020/des_ar12.png" data-background-size="cover" data-background-color="#fff">
+      <h3><span class="dark-back">Environmental Design</span></h3>
+    </section>
+    <section data-background="assets/2020/ar1.png" data-background-size="cover" data-background-color="#fff">
+      <p><span class="dark-back"><strong>Environment is your Context</strong>. Imagine looking through a 'window' into an enhanced (augmented) environment. Whatever context Users are currently in is the environment!</span></p>
+      <p class="fragment"><span class="dark-back">Keep the User’s context in mind, as that will have some bearing on things like UI placement, color, and size.</span></p>
+    </section>
+    <section data-background="assets/2020/public_space.jpg" data-background-size="cover" data-background-color="#fff">
+      <p><span class="dark-back">Remember the experience should fit the environment.</span></p>
+      <p><span class="dark-back">i.e. a board game might work best at table scale, a scavenger hunt will need a much bigger area.</span></p>
+    </section>
+    <section> <img src="assets/2020/size.png"/>
+      <p class="small bullet fragment">Show users the ideal size and the perfect conditions for your experience - set expectations.</p>
+      <p class="small bullet fragment">Give users a clear understanding of the amount of space they’ll need for your experience. Can you use it on your lap, a kitchen table, or a football stadium? Show them the ideal conditions for using it.</p>
+    </section>
+    <section data-menu-title="wayne"  data-background="assets/2020/des_ar10.jpg" data-background-size="contain" data-background-color="#fff"> </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-video="https://assets.awwwards.com/awards/external/2016/11/hyper-reality-gestures-augmented-UI.mp4" data-background-video-loop="loop">
+      <p><span class="dark-back"><strong>NOTE: Public spaces provide their own set of challenges for AR. Tracking and occlusion become difficult, depending on the number of objects and people around. Also, phone movement and AR immersion can be distracting or dangerous</strong></span></p>
+    </section>
+    <section data-menu-title="wayne"  data-background="assets/2020/plane2.jpg" data-background-size="cover" data-background-color="#fff">
+      <h3><span class="dark-back">Environmental limitations</span></h3>
+    </section>
+
+    <section data-background-size="cover" data-background-color="#fff" style="text-align: left" data-background-video="assets/ar/drift.mp4" data-background-video-loop="loop">
+      <p class="tight"><span class="dark-back">Limitations that may hinder accurate understanding of surfaces include:</span></p>
+      <p ><span class="dark-back tight fragment"> &#8226; Flat surfaces without texture, such as a white desk</span></p>
+      <p class="tight fragment"><span class="dark-back tight"> &#8226; Environments with dim lighting</span></p>
+      <p class="tight fragment"><span class="dark-back tight"> &#8226; Extremely bright environments</span></p>
+      <p class="tight fragment"><span class="dark-back tight"> &#8226; Transparent or reflective surfaces like glass</span></p>
+      <p class="tight fragment"><span class="dark-back tight"> &#8226; Dynamic or moving surfaces, such as blades of grass or ripples in water</span></p>
+      <p class="tight fragment"><span class="dark-back tight"> &#8226; When users encounter environmental limitations, indicate what went wrong and point them in the right direction.</span></p>
+    </section>
+             <section data-menu-title="" data-background-transition="convex" data-background-video="assets/ar/drift.mp4" data-background-video-loop="loop"><h2>DRIFT</h2>
+      </section>
+    <section data-menu-title="wayne"  data-background="assets/2020/des_ar12.png" data-background-size="cover" data-background-color="#fff">
+      <h3><span class="dark-back">Interaction Design</span></h3>
+    </section>
+    <section>
+      <h3></h3>
+      <p>What will your user be interacting with?</p>
+      <p class="small bullet">3D volumes/objects</p>
+      <p class="small bullet">Animated Media</p>
+    </section>
+    <section>
+      <p>This is how you interact with the context or environment. These interactions take place within the ‘window’ of your phone screen. </p>
+      <p class="small bullet ">There exists both 2D Media, ui and 3D objects. </p>
+      <p class="small bullet "> Remember that context will also drive the possible interactions that Users can use to touch your AR experience.</p>
+    </section>
+             <section data-background-size="cover" data-background-color="#fff" style="text-align: left" data-background-video="assets/ar/dino.mp4" data-background-video-loop="loop">
+      </section>
+    <section>
+      <h3>Considerations?</h3>
+      <p>In what situations are touch interactions possible? </p>
+      <p class="small bullet fragment">Are there some contexts in which only voice commands would be safer like driving/cycling? </p>
+      <p class="small bullet fragment">Will users have a long or short time to interact with each experience?</p>
+    </section>
+    <section>
+      <h3>Interacting in the environment</h3>
+      <p>How will you be interacting with the environment?</p>
+      <p class="small bullet fragment"> Tap</p>
+      <p class="small bullet fragment"> Swipe</p>
+      <p class="small bullet fragment">Pinch</p>
+      <p class="small bullet fragment">Rotate</p>
+      <p class="small bullet fragment"> Air Tap/Gesture (HoloLens specific)</p>
+      <p class="small bullet fragment"> Voice</p>
+      <p class="small bullet fragment"> Hover</p>
+      <p class="small bullet fragment"> Facial expressions</p>
+    
+    </section>
+        <section data-menu-title="" data-background-transition="convex" data-background-video="assets/ar/manomotion.mp4" data-background-video-loop="loop">
+      <p class="small"><a href="https://www.mecharithm.com/hand-tracking-in-augmented-reality-ar/">Hand tracking tutorial</a></p>
+             <p class="small"><a href="https://www.manomotion.com/mobile-ar/">Motion tracking sdk</a></p>
+
+            
+      </section>
+    <section>
+      <h3>Considerations?</h3>
+      <p class="small bullet ">Interactions depend on the goal of your experience </p>
+      <p class="small bullet fragment">Think about Snapchat vs Pokemon Go vs Ikea furniture — each of these attempts to encourage the User to reach a different goal</p>
+      <p class="small bullet fragment">What hardware the users will be engaging with (features)</p>
+    </section>
+    <section>
+      <p><strong>How</strong> will you be interacting with the environment?</p>
+      <p class="fragment"> <strong>Ergonomics!</strong></p>
+      <p class="small bullet fragment">Think about how people will hold their devices while using your app</p>
+      <p class="small bullet fragment">Try to place frequently accessed UI in comfortable-to-reach areas</p>
+      <p class="small bullet fragment">Put important elements in the center of interface</p>
+      <p class="small bullet fragment">Experiment with comfortable interaction zones! Where can your thumbs reach easily? <a href="https://www.uxmatters.com/mt/archives/2013/02/how-do-users-really-hold-mobile-devices.php">Read more</a></p>
+    </section>
+    <section data-background="assets/2020/des_ar5.gif" data-background-size="cover" data-background-color="#fff">
+        <h3><span class="dark-back">Visual Cues</span></h3>
+      <p><span class="dark-back">Use on-screen UI to encourage looking around and show off-screen elements</span></p>
+      <p><span class="dark-back">Highlight interactable elements</span></p>
+    </section>
+        <section data-menu-title="wayne"  data-background="assets/2020/des_ar1.gif" data-background-size="cover" data-background-color="#fff"> </section>
+      
+              <section data-menu-title="wayne"  data-background="assets/2020/audio.jpg" data-background-size="cover" data-background-color="#fff"><h3>Sound Cues</h3> </section>
+         <section data-background-size="cover" data-background-color="#fff" style="text-align: left" data-background-video="assets/ar/sound.mp4" data-background-video-loop="loop">
+      </section>
+    <section>
+      <h3>Sound Cues</h3>
+      <p>Like VR, use sound to tell the User about off-screen objects - but be mindful of a few things:</p>
+      <p class="small bullet fragment">Avoid playing sounds simultaneously</p>
+      <p class="small bullet fragment">Add attenuation (reduction of the amplitude) to moderate sound effects</p>
+      <p class="small bullet fragment">Set the audio to fade or stop if user is not interacting with the object</p>
+      <p class="small bullet fragment">Allow users to manually turn off the audio for individual object</p>
+    </section>
+      
+        <section data-menu-title="" data-background-transition="convex" data-background-video="assets/2020/onboarding.mp4" data-background-video-loop="loop">
+      <h3>on-boarding</h3>
+    </section>
+      
+    <section>
+      <p>Offer easy on-boarding- many users have never experienced an AR environment before and will need guidance on how to interact with it.</p>
+        <p class="fragment">On boarding plays a key role in creating a great UX. Let users start in AR quickly by making a tutorial a part of the main experience flow.</p>
+    </section>
+      
+          <section>
+      <h3>Don’t clutter UI</h3>
+      <p> A good AR experience immerses users into interactions. It only happens when people believe that what they see on the screen is real.</p>
+      <p class="small bullet fragment">Devote as much of the screen as possible to display the physical world and your app’s virtual objects. </p>
+      <p class="small bullet fragment">Avoid cluttering the screen with visible UI controls and information because they diminish the immersive experience.</p>
+    </section>
+      
+    <section>
+      <p>Avoid teaching users all the key tasks or mechanics at once</p>
+      <p class="small bullet fragment">Show instructions or tips on how to perform specific things in the context of actual interactions. </p>
+      <p class="small bullet fragment">By doing that, you won’t overload users with information, and they’ll be able to get all the important information at hand.</p>
+    </section>
+    <section data-menu-title="wayne" data-background="assets/2020/des_ar2.jpg" data-background-size="contain" data-background-color="#fff"> </section>
+    <section data-menu-title="wayne" data-background="assets/2020/des_ar4.jpg" data-background-size="cover" data-background-color="#fff"> </section>
+      
+    <section>
+      <h3>Innovate in Small Doses </h3>
+      <p>Remember that just like 2D design, having a high Cognitive Load on your user is bad! </p>
+       <p class="fragment"> Known mobile gestures like pinch, swipe, tap, etc will help ground users in their context so they feel comfortable exploring the full experience</p>
+      <p class="small bullet fragment">Make buttons look like buttons (Affordances)</p>
+      <p class="small bullet fragment">Use known mobile gestures</p>
+      <p class="small bullet fragment">Make sure there's enough familiarity to not scare away new users</p>
+    </section>
+          <section data-menu-title="wayne"  data-background="assets/2020/des_ar9.gif" data-background-size="cover" data-background-color="#fff"> </section>
+      
+
+      <section data-menu-title="wayne"  data-background="assets/2020/des_ar7.gif" data-background-size="cover" data-background-color="#fff">
+      <h3><span class="dark-back">Presence</span></h3>
+      </section>
+    <section data-menu-title="wayne"  data-background="assets/2020/des_ar6.gif" data-background-size="cover" data-background-color="#fff">
+      <h3><span class="dark-back">Presence</span></h3>
+      <p><span class="dark-back fragment">Strive for convincing illusions when placing realistic objects</span></p>
+      <p><span class="dark-back fragment">Your AR objects should engage with and reflect their environment. Use shadows, lighting, occlusion, reflection, and collision to help your objects take up space in the real world.</span></p>
+      <p><span class="dark-back fragment">Use visual techniques to give depth and distance to your scene.</span></p>
+      <p><span class="dark-back fragment">Breaking immersion: Make sure your app updates the scene 60 times per second, so objects don’t appear to flicker (AR Foundation optimises this but you can manually set it).</span></p>
+    </section>
+      
+          <section data-background="assets/2020/emapthy.png" data-background-size="600px" data-background-color="#fff">
+      <h3><span class="dark-back">Empathy!</span></h3>
+      <p><span class="dark-back fragment">The most important skill in UX design is to understand your user</span></p>
+      <p> <span class="dark-back fragment">How would you feel going through this experience if you weren't you?</span></p>
+    </section>
+      
+      
+    <section>
+      <h3>Check out AR KIT 6 features in the next slide (20 mins)</h3>
+    </section>
+    <section>
+      <iframe width="100%" height="900" src="https://youtu.be/9qoM-DxWXq8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+    <section data-background-transition="convex" data-background-video="https://wayne-christian.github.io/WEB-AUTH-PRESENTATIONS/assets//week1assets/jumpfail.mp4">
+      <h3>Fail to prepare<br>
+        Prepare to fail!</h3>
+    </section>
+    <section>
+      <h2>Boom!</h2>
+    </section>
+  </div>
+</div>
+<script src="lib/js/head.min.js"></script> 
+<script src="js/reveal.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="https://code.highcharts.com/highcharts.js"></script> 
+<script src="https://code.highcharts.com/highcharts-more.js"></script> 
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script> 
+<script src="js/themes/mypbtheme.js"></script> 
+<script src="js/jquery.animateNumber.min.js"></script> 
+<script src="js/main.js"></script> 
+<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+</body>
+</html>
